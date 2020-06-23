@@ -1,0 +1,26 @@
+.table.table-striped {
+    color: white;
+    text-align: center;
+    width: 45%;
+    /* height: 43vh; */
+    margin: auto;
+    margin-top: 7%;
+    background-color: #1f324a;
+    /* border-radius: 55px; */
+    box-shadow: 37px 29px 24px rgba(0,0,0,.6);
+    /* border-radius: 242px; */
+}
+.table.table-borderless{
+    color: white;
+    text-shadow:1px 1px black;
+}
+.table td, .table th{
+    padding-left: 55px;
+}
+tr{
+    background-color: #80808094;
+    color: white;
+}
+#button{
+    margin: 0% 75%;
+}
