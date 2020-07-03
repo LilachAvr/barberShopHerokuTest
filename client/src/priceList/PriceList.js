@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PriceList.css'
+// import './PriceList.css'
 import axios from 'axios'
 
 class PriceList extends Component {
@@ -29,7 +29,8 @@ class PriceList extends Component {
                     <thead className='table table-borderless'>
                         <tr>
                             <th scope="col" >מחיר</th>
-
+            <th>לילך</th>
+            <th>khklklhgjj</th>
                             <th scope="col">סוג תספורת</th>
                         </tr>
                     </thead>

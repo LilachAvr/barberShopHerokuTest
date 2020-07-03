@@ -334,6 +334,9 @@ class SettingQueues extends Component {
 
     filtTimes = () => {
         console.log(this.state.timesList);
+        console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
+        
+        
 
         for (let i = 0; i < this.state.times.length; i++) {
             const clientTime = this.state.times[i].time;

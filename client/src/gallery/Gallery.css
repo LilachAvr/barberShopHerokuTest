@@ -1,5 +1,5 @@
 
-.gallery{
+/* .gallery{
     text-align: center;
     margin-top: 5%;
 }
@@ -43,15 +43,15 @@
 .image-gallery-image {
     max-width: 53vh !important;
     height: 50vh;
-}
+} */
 
 
-button:hover{
-    background-color: transparent;
+/* button:hover{ */
+    /* background-color: transparent; */
     /* color: wheat; */
-}
+/* } */
    
-    .image-gallery-thumbnail .image-gallery-thumbnail-image {
+    /* .image-gallery-thumbnail .image-gallery-thumbnail-image {
     vertical-align: middle;
     width: 100%;
     line-height: 0;
@@ -80,4 +80,4 @@ button:hover{
 .image-gallery-slide-wrapper bottom {
     position: relative;
     margin: 0 32%;
-}
+} */
