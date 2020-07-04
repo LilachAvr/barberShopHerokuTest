@@ -108,11 +108,11 @@ class SettingQueues extends Component {
                     this.setState({ isDisable: true })
                     {
                         alert
-                        (  this.state.filterQueues.map((q, i) =>
+                            (this.state.filterQueues.map((q, i) =>
                                 <p>  היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
 
-                            )) 
-                    
+                            ))
+
                     }
                 }
                 else {
@@ -343,23 +343,32 @@ class SettingQueues extends Component {
         console.log(this.state.timesList);
         console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
 
+        let clientTime = this.state.times
+        let dbTime = this.state.timesList
+        let clientTimeNew = []
+        for (let i = 0; i < clientTime.length; i++) {
+            if (clientTime[i].time === dbTime[i].time && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
+                clientTimeNew.push(clientTime[i].time)
+                console.log(clientTimeNew);
 
-
-        for (let i = 0; i < this.state.times.length; i++) {
-            const clientTime = this.state.times[i].time;
-            for (let j = 0; j < this.state.timesList.length; j++) {
-                const dbTime = this.state.timesList[j].time;
-                console.log(clientTime, dbTime);
-
-                if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
-                    console.log(this.state.times.splice(i, 0));
-                    this.state.times.splice(i, 1)
-
-                } else {
-                    console.log('eroor splice');
-                }
             }
         }
+
+        // for (let i = 0; i < this.state.times.length; i++) {
+        //     const clientTime = this.state.times[i].time;
+        //     for (let j = 0; j < this.state.timesList.length; j++) {
+        //         const dbTime = this.state.timesList[j].time;
+        //         console.log(clientTime, dbTime);
+
+        //         if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
+        //             console.log(this.state.times.splice(i, 0));
+        //             this.state.times.splice(i, 1)
+        //             // return clientTime != dbTime
+        //         } else {
+        //             console.log('eroor splice');
+        //         }
+        //     }
+        // }
 
         // for (let i = 0; i < this.state.times.length; i++) {
         //     // const element = this.state.times[i].time;
