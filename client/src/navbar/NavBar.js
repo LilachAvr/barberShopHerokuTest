@@ -80,7 +80,7 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/'>X</Link>
+                    <Link to='/' className='close_nav'>X</Link>
                     <ul>
                         <li>
                             <Link to='/'>בית</Link>
