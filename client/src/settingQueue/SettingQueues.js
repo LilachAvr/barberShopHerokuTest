@@ -256,7 +256,7 @@ class SettingQueues extends Component {
 
                                 {this.state.times.map((time, i) =>
 
-                                    <option key={i} > {time.time} </option>
+                                    <option key={i} > {time.time, console.log(time.time)} </option>
 
                                 )}
                             </select>
@@ -343,8 +343,7 @@ class SettingQueues extends Component {
         console.log(this.state.timesList);
         console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
 
-        const clientTime1 = this.state.times
-        const dbTime1 = this.state.timesList
+      
         const clientTimeNew = []
 
         for (let i = 0; i < clientTime1.length; i++) {
