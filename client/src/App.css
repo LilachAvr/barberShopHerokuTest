@@ -201,3 +201,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.navbar-collapse {
+  /* flex-basis: 100%; */
+  /* flex-grow: 1; */
+  /* align-items: center; */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.8);
+  z-index: 10;
+}
