@@ -106,14 +106,13 @@ class SettingQueues extends Component {
                     this.setState({ allQueues: tmp })
                     this.setState({ alertSuccess: true })
                     this.setState({ isDisable: true })
-
                     {
-                        <alert>
-                        {this.state.filterQueues.map((q, i) =>
-                            <p>היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
+                        <alert
+                        {    ...state.filterQueues.map((q, i) =>
+                                <p>  היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
 
-                        )}
-                    </alert>
+                            )}
+                      />
                     }
                 }
                 else {
@@ -225,7 +224,7 @@ class SettingQueues extends Component {
 
                 {
                     this.state.alertSuccess ? <div className="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>התור נקבע בהצלחה!</strong>
+                        . התור נקבע בהצלחה!,<strong>{this.props.username.userName}</strong> היי
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
                             this.setState({ alertSuccess: !this.state.alertSuccess })}>
                             <span id='exit' aria-hidden="true">&times;</span>
