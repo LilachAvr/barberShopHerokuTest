@@ -106,14 +106,8 @@ class SettingQueues extends Component {
                     this.setState({ allQueues: tmp })
                     this.setState({ alertSuccess: true })
                     this.setState({ isDisable: true })
-                    {
-                        alert
-                            (this.state.filterQueues.map((q, i) =>
-                                <p>  היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
 
-                            ))
 
-                    }
                 }
                 else {
 
@@ -224,7 +218,7 @@ class SettingQueues extends Component {
 
                 {
                     this.state.alertSuccess ? <div className="alert alert-success alert-dismissible fade show" role="alert">
-                        . התור נקבע בהצלחה!,<strong>{this.props.username.userName}</strong> היי
+                        <strong>התור נקבע בהצלחה!</strong>
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
                             this.setState({ alertSuccess: !this.state.alertSuccess })}>
                             <span id='exit' aria-hidden="true">&times;</span>
@@ -256,8 +250,7 @@ class SettingQueues extends Component {
 
                                 {this.state.times.map((time, i) =>
 
-                                    <option key={i} > {console.log(time.time)}
-                                 </option>
+                                    <option key={i} > {time.time} </option>
 
                                 )}
                             </select>
@@ -317,7 +310,6 @@ class SettingQueues extends Component {
                             </tbody>
 
                         </table>
-
                     </div>
                 </div>
 
@@ -343,33 +335,24 @@ class SettingQueues extends Component {
     filtTimes = () => {
         console.log(this.state.timesList);
         console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
+        
+        
 
-      
-        const clientTimeNew = []
+        for (let i = 0; i < this.state.times.length; i++) {
+            const clientTime = this.state.times[i].time;
+            for (let j = 0; j < this.state.timesList.length; j++) {
+                const dbTime = this.state.timesList[j].time;
+                console.log(clientTime, dbTime);
 
-        for (let i = 0; i < clientTime1.length; i++) {
-            if (this.clientTime1[i].time === this.dbTime1[i].time && this.dbTime1[i].date === this.selectValue && this.dbTime1[i].barber === this.chooseBarber) {
-                clientTimeNew.push(clientTime1[i].time)
-                console.log(clientTimeNew);
+                if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
+                    // console.log(this.state.times.splice(i, 0));
+                     this.state.times.splice(i, 1)
 
+                } else {
+                    console.log('eroor splice');
+                }
             }
         }
-
-        // for (let i = 0; i < this.state.times.length; i++) {
-        //     const clientTime = this.state.times[i].time;
-        //     for (let j = 0; j < this.state.timesList.length; j++) {
-        //         const dbTime = this.state.timesList[j].time;
-        //         console.log(clientTime, dbTime);
-
-        //         if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
-        //             console.log(this.state.times.splice(i, 0));
-        //             this.state.times.splice(i, 1)
-        //             // return clientTime != dbTime
-        //         } else {
-        //             console.log('eroor splice');
-        //         }
-        //     }
-        // }
 
         // for (let i = 0; i < this.state.times.length; i++) {
         //     // const element = this.state.times[i].time;
@@ -385,8 +368,6 @@ class SettingQueues extends Component {
         // }
 
     }
-
-
 
 }
 
