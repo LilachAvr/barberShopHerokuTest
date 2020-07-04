@@ -256,7 +256,8 @@ class SettingQueues extends Component {
 
                                 {this.state.times.map((time, i) =>
 
-                                    <option key={i} > {time.time, console.log(time.time)} </option>
+                                    <option key={i} > {console.log(time.time)}
+                                 </option>
 
                                 )}
                             </select>
