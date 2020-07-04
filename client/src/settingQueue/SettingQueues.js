@@ -251,7 +251,7 @@ class SettingQueues extends Component {
                                 {this.state.times.map((time, i) =>
 
                                     <option key={i} > {time.time} </option>
-                                   
+
                                 )}
                             </select>
                             : ''}
@@ -310,6 +310,12 @@ class SettingQueues extends Component {
                             </tbody>
 
                         </table>
+                        <alert>
+                            {this.state.filterQueues.map((q, i) =>
+                                <p>היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
+
+                            )}
+                        </alert>
                     </div>
                 </div>
 
@@ -335,8 +341,8 @@ class SettingQueues extends Component {
     filtTimes = () => {
         console.log(this.state.timesList);
         console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
-        
-        
+
+
 
         for (let i = 0; i < this.state.times.length; i++) {
             const clientTime = this.state.times[i].time;
@@ -346,7 +352,7 @@ class SettingQueues extends Component {
 
                 if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
                     console.log(this.state.times.splice(i, 0));
-                     this.state.times.splice(i, 1)
+                    this.state.times.splice(i, 1)
 
                 } else {
                     console.log('eroor splice');
