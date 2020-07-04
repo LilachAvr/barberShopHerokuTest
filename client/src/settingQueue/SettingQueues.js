@@ -348,7 +348,7 @@ class SettingQueues extends Component {
         const clientTimeNew = []
 
         for (let i = 0; i < clientTime1.length; i++) {
-            if (clientTime1[i].time === dbTime1[i].time && dbTime1[i].date === this.selectValue && dbTime1[i].barber === this.chooseBarber) {
+            if (this.clientTime1[i].time === this.dbTime1[i].time && this.dbTime1[i].date === this.selectValue && this.dbTime1[i].barber === this.chooseBarber) {
                 clientTimeNew.push(clientTime1[i].time)
                 console.log(clientTimeNew);
 
