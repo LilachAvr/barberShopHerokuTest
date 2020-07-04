@@ -107,12 +107,12 @@ class SettingQueues extends Component {
                     this.setState({ alertSuccess: true })
                     this.setState({ isDisable: true })
                     {
-                        <alert
-                        {    ...state.filterQueues.map((q, i) =>
+                        alert
+                        (  this.state.filterQueues.map((q, i) =>
                                 <p>  היי {q.userName},  נקבע לך תור בתאריך ה-{q.date}בשעה - {q.time} סוג תספורת - {q.style} אצל {q.barber}</p>
 
-                            )}
-                      />
+                            )) 
+                    
                     }
                 }
                 else {
