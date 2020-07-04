@@ -33,13 +33,13 @@ import NotFound from '../notFound/NotFound';
 
 
 class NavBar extends Component {
-    state = { firstName: { firstName: null, phoneNumber: null }, dateHistory: { date: '', time: '' }, name :{userName:'', phone:''} }
+    state = { firstName: { firstName: null, phoneNumber: null }, dateHistory: { date: '', time: '' }, name: { userName: '', phone: '' } }
     name = ''
     // date = (date, time) => {
     //     let temp = { date, time }
     //     this.setState({ dateHistory: temp })
     //     console.log('drdfyhjlkjhggdfghjo;klikjdhtsgdfghijlo;lkjfhdgdfghkjl');
-        
+
     // }
 
     username = (name) => {
@@ -51,18 +51,18 @@ class NavBar extends Component {
         this.setState({ firstName: tmp })
     }
 
-    logs = (userName,phone,token) => {
-        console.log(userName,phone,token);
-        let temp = {userName, phone,token}
+    logs = (userName, phone, token) => {
+        console.log(userName, phone, token);
+        let temp = { userName, phone, token }
         console.log(temp);
-        
-        this.setState({ name: temp})
+
+        this.setState({ name: temp })
         console.log(this.state.name);
-    
+
     }
-componentDidMount(){
-    this.logs();
-}
+    componentDidMount() {
+        this.logs();
+    }
 
     logOUt() {
         localStorage.removeItem('usertoken')
@@ -80,15 +80,33 @@ componentDidMount(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/'>בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
+                    <Link to='/'>X</Link>
+                    <ul>
+                        <li>
+                            <Link to='/'>בית</Link>
+                        </li>
+                        <li>
+                            <Link to='/Gallery'>גלריה</Link>
+                        </li>
+                        <li>
+                            <Link to='/PriceList'>מחירון</Link>
+                        </li>
+                        <li>
+                            <Link to='/Products'>המוצרים שלנו</Link>
+                        </li>
+                        <li>
+                            <Link to="/SignUp" className="nav-link"> הרשמה </Link>
+                            <Link to="/SignIn" className="nav-link">כניסה</Link>
+                        </li>
+                    </ul>
+
+
+
+
                 </Nav>
-                <Form inline>
-                    <Link to="/SignUp" className="nav-link"> הרשמה </Link>
-                    <Link to="/SignIn" className="nav-link">כניסה</Link>
-                </Form>
+                {/* <Form inline>
+                
+                </Form> */}
             </Navbar.Collapse>
         </Navbar>
     )
@@ -101,6 +119,7 @@ componentDidMount(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
+                    <Link to='/Home1'>בית</Link>
                     <Link to='/Home1'>בית</Link>
                     <Link to='/Gallery'>גלריה</Link>
                     <Link to='/SettingQueues'>קביעת תורים</Link>
@@ -122,6 +141,7 @@ componentDidMount(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
+                    <Link to='/WebManager'>בית</Link>
                     <Link to='/WebManager'>בית</Link>
                     <Link to='/Gallery'>גלריה</Link>
                     <Link to='/SettingQAdmin'>קביעת תורים</Link>
@@ -174,12 +194,12 @@ componentDidMount(){
                     <Route exact path='/SettingQueues' render={() => <SettingQueues logs={this.logs} username={this.state.name} phone={this.state.phoneNumber} select={this.date} />} />
                     <Route exact path='/PriceList' component={PriceList} />
                     <Route exact path='/Products' component={Products} />
-                    <Route exact path='/SignIn' render={() => <SignIn userName={this.username} logs={this.logs} log={this.props.log}/>} />
+                    <Route exact path='/SignIn' render={() => <SignIn userName={this.username} logs={this.logs} log={this.props.log} />} />
                     <Route exact path='/SignUp' component={SignUp} />
                     <Route exact path='/Admin' render={() => <Admin userName={this.username} logs={this.logs} />} />
                     <Route exact path='/signUpAdmin' component={SignUpAdmin} />
                     <Route exact path='/ClientQueues' render={() => <ClientQueues username={this.state.firstName} dateHistory={this.state.dateHistory} />} />
-                    <Route exact path='/ClientQueuesToEmployee' render={() => <ClientQueuesToEmployee username={this.state.firstName} dateHistory={this.state.dateHistory} logs={this.logs} log={this.props.log}/>} />
+                    <Route exact path='/ClientQueuesToEmployee' render={() => <ClientQueuesToEmployee username={this.state.firstName} dateHistory={this.state.dateHistory} logs={this.logs} log={this.props.log} />} />
                     <Route exact path='/Login' component={Login} />
                     <Route exact path='/AboutUs' component={AboutUs} />
                     <Route exact path='/TermsOfUse' component={TermsOfUse} />
@@ -189,9 +209,9 @@ componentDidMount(){
                     <Route exact path='/SettingQAdmin' render={() => <SettingQAdmin username={this.state.firstName} select={this.date} />} />
                     <Route exact path='/UpdatePriceList' component={UpdatePriceList} />
                     <Route exact path='/UploadImages' component={ReactUploadImage} />
-                    <Route exact path='/Employee' render={() => <Employee userName={this.username} logs={this.logs} log={this.props.log}/>} />
-                    <Route exact path='/S' component={S}/>
-                    <Route exact path='/Footer' component={Footer}/>
+                    <Route exact path='/Employee' render={() => <Employee userName={this.username} logs={this.logs} log={this.props.log} />} />
+                    <Route exact path='/S' component={S} />
+                    <Route exact path='/Footer' component={Footer} />
                     <Route component={NotFound} />
                 </Switch>
             </BrowserRouter>
