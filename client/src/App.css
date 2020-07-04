@@ -45,15 +45,15 @@ body{
   .App a:hover { 
     background-color: rgba(201, 104, 25,0.500);
   }  */ 
-  .nav-link {
+  /* .nav-link {
     display: block;
     padding: 0.5rem 0rem;
 }
   .navbar a{
     color: #e6e6e6;
-    margin: 0 0px 0 18px;
+    margin: 0 0px 0 18px; */
     /* border-right: 1px solid; */
-    padding: 0px 40px 0 0px;
+    /* padding: 0px 40px 0 0px;
     text-shadow: 1px 1px rgb(107, 107, 107);
     font-size: large;
     font-weight: 700;
@@ -75,7 +75,7 @@ body{
     font-size: 12px;
     white-space: nowrap;
     
-  }
+  } */
   /* #liLogin{
     border: 1px solid white;
     list-style: none;
@@ -97,51 +97,51 @@ body{
     outline: none;
     direction: rtl;
   } */ 
-  .mr-auto, .mx-auto {
+  /* .mr-auto, .mx-auto {
     margin: 0 24% 0 27% !important;
 }
   .navbar-dark .navbar-nav .nav-link {
     color: #e2e1df;
-}
+} */
 .navbar-toggler-icon{
   font-size: small;
  width: 100%;
 }
-.navbar-toggler{
+/* .navbar-toggler{
    text-decoration: none;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-transparent{
+} */
+/* .navbar.navbar-expand-lg.navbar-light.bg-transparent{ */
   /* background-color: #88040479!important; */
-  background: linear-gradient(#141e30, #243b55);
-}
-span.nav-link {
+  /* background: linear-gradient(#141e30, #243b55);
+} */
+/* span.nav-link { */
   /* font-size: 16px; */
-  margin-bottom: 0%;
+  /* margin-bottom: 0%;
   font-family: cursive;
   text-shadow: none;
-  text-transform: capitalize;
+  text-transform: capitalize; */
   /* font-size: 13px; */
-  direction: rtl;
+  /* direction: rtl;
   text-align: end;
   display: contents;
-}
-.iconLocation{
+} */
+/* .iconLocation{ */
   /* white-space: nowrap; */
 /* padding: 0; */
-  max-width: 30px;
+  /* max-width: 30px; */
   /* height: auto; */
-}
-.location{
+/* }/ */
+/* .location{
 padding: 0 !important;
 width: 28px;
     height: 30px;
-}
+} */
 
-@media screen and (max-width:966px){
+/* @media screen and (max-width:966px){
   span.nav-link{
     white-space: normal;
   }
-}
+} */
 
 .rington{
   max-width: 40px;
