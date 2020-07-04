@@ -389,9 +389,6 @@ class SettingQueues extends Component {
 
 
 }
-let clientTime = this.state.times
-let dbTime = this.state.timesList
-let clientTimeNew = []
 
 
 
