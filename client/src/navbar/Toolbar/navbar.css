@@ -1,0 +1,44 @@
+.toolbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(rgb(20, 30, 48), rgb(36, 59, 85)) ;
+    height: 56px;
+
+}
+
+.toolbar_navigation {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;
+ }
+
+.toolbar_logo a{ 
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.toolbar_navigation-items{
+    color: white;
+    text-decoration: none;
+}
+
+.toolbar_logo{
+    margin-left: 0.5rem ;
+}
+.toolbar_navigation-items ul{
+    padding: 0 0.5rem;
+  
+}
+
+.spacer{
+    flex: 1;
+}
+.toolbar_navigation-items ul
+.toolbar_navigation-items a:hover,
+.toolbar_navigation-items a:active{
+    color: wheat;
+}

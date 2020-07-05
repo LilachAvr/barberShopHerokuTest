@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import NavBar from './navbar/NavBar';
+// import './App.css';
+import NavBar from './navbar/Toolbar/NavBar';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './footer/footer';
@@ -22,7 +22,7 @@ class App extends Component {
         <div className="App">
 
           <NavBar log={this.logged} />
-          <img className='rington' src='noun_ringtone_682260.png' alt=''/>
+          <main style={{marginTop:'64px'}}></main>
           <Footer />
 
         </div>
