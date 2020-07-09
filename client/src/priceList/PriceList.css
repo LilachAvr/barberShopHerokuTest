@@ -2,13 +2,13 @@
     color: white;
     text-align: center;
     width: 45%;
-    /* height: 43vh; */
+    height: 43vh;
     margin: auto;
     margin-top: 7%;
     background-color: #1f324a;
-    /* border-radius: 55px; */
+    border-radius: 55px;
     box-shadow: 37px 29px 24px rgba(0,0,0,.6);
-    /* border-radius: 242px; */
+    border-radius: 242px;
 }
 .table.table-borderless{
     color: white;

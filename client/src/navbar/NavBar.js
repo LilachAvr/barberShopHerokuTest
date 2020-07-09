@@ -1,42 +1,37 @@
 import React, { Component } from 'react';
-// import '../App.css';
-// import '../home/Home.css';
-import '../navbar/Toolbar/navbar.css'
-import DrawerToggleButton from  '../SideDrawer/DrawerToggleButton'
+import '../App.css';
+import '../home/Home.css';
 import { BrowserRouter, Link, Switch, Route, withRouter } from 'react-router-dom';
 import { Navbar, Form, Nav } from 'react-bootstrap';
-import Home from '../../home/Home';
-import Home1 from '../../home/Home1';
-import SettingQueues from '../../settingQueue/SettingQueues';
-import PriceList from '../../priceList/PriceList';
-import Products from '../../product/Products';
-import Admin from '../../admin/BusinessManager/Admin';
-import ClientQueues from '../../admin/BusinessManager/clientQueues';
-import ClientQueuesToEmployee from '../../admin/Employee/ClientQueuesToEmployee';
-import Gallery from '../../gallery/Gallery';
-import Login from '../../login/Login';
-import SignIn from '../../login/SignIn';
-import SignUp from '../../login/SignUp';
-import SignUpAdmin from '../../login/signUpAdmin';
-import AboutUs from '../../home/AboutUs';
-import TermsOfUse from '../../home/TermsOfUse';
-import WebManager from '../../admin/BusinessManager/WebManager';
-import UpdateActivityTime from '../../admin/BusinessManager/UpdateActivityTime';
-import SettingQAdmin from '../../admin/BusinessManager/SettingQAdmin';
-import UpdatePriceList from '../../admin/BusinessManager/UpdatePriceList';
-import ReactUploadImage from '../../admin/BusinessManager/UploadImages';
-import Employee from '../../admin/Employee/Employee';
-import WebEmployee from '../../admin/Employee/WebEmployee';
-import S from '../../settingQueue/s';
-import Footer from '../../footer/footer'
-import NotFound from '../../notFound/NotFound';
-import drawerToggleButton from '../SideDrawer/DrawerToggleButton';
-
-
+import Home from '../home/Home';
+import Home1 from '../home/Home1';
+import SettingQueues from '../settingQueue/SettingQueues';
+import PriceList from '../priceList/PriceList';
+import Products from '../product/Products';
+import Admin from '../admin/BusinessManager/Admin';
+import ClientQueues from '../admin/BusinessManager/clientQueues';
+import ClientQueuesToEmployee from '../admin/Employee/ClientQueuesToEmployee';
+import Gallery from '../gallery/Gallery';
+import Login from '../login/Login';
+import SignIn from '../login/SignIn';
+import SignUp from '../login/SignUp';
+import SignUpAdmin from '../login/signUpAdmin';
+import AboutUs from '../home/AboutUs';
+import TermsOfUse from '../home/TermsOfUse';
+import WebManager from '../admin/BusinessManager/WebManager';
+import UpdateActivityTime from '../admin/BusinessManager/UpdateActivityTime';
+import SettingQAdmin from '../admin/BusinessManager/SettingQAdmin';
+import UpdatePriceList from '../admin/BusinessManager/UpdatePriceList';
+import ReactUploadImage from '../admin/BusinessManager/UploadImages';
+import Employee from '../admin/Employee/Employee';
+import WebEmployee from '../admin/Employee/WebEmployee';
+import S from '../settingQueue/s';
+import Footer from '../footer/footer'
+import NotFound from '../notFound/NotFound';
 
 
 class NavBar extends Component {
-    state = { firstName: { firstName: null, phoneNumber: null }, dateHistory: { date: '', time: '' }, name: { userName: '', phone: '' } }
+    state = { sideDrawerOpen: false, firstName: { firstName: null, phoneNumber: null }, dateHistory: { date: '', time: '' }, name: { userName: '', phone: '' } }
     name = ''
     // date = (date, time) => {
     //     let temp = { date, time }
@@ -74,37 +69,27 @@ class NavBar extends Component {
         this.props.history.push('/')
     }
 
-    loginRegLink = (
-        <header className='toolbar'>
-            <nav className='toolbar_navigation'>
-                <div>
-                    <DrawerToggleButton/>
-                </div>
-            <div className='toolbar_logo'><a href='/' /><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i></div>
-            <div className='spacer'/>
-            <div className='toolbar_navigation-items'>
-                <ul>
-                    <li>
-                        <Link to='/'>בית</Link>
-                    </li>
-                    <li>
-                        <Link to='/Gallery'>גלריה</Link>
-                    </li>
-                    <li>
-                        <Link to='/PriceList'>מחירון</Link>
-                    </li>
-                    <li>
-                        <Link to='/Products'>המוצרים שלנו</Link>
-                    </li>
-                    <li>
-                        <Link to="/SignUp" className="nav-link"> הרשמה </Link>
-                        <Link to="/SignIn" className="nav-link">כניסה</Link>
-                    </li>
-                </ul>
-            </div>
-            </nav>
-        </header>
 
+
+    loginRegLink = (
+        <Navbar bg="transparent" expand="lg">
+            <Navbar.Brand href="#home">
+                <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
+                </span>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Link to='/'>בית</Link>
+                    <Link to='/Gallery'>גלריה</Link>
+                    <Link to='/PriceList'>מחירון</Link>
+                    <Link to='/Products'>המוצרים שלנו</Link>
+                </Nav>
+                <Form inline>
+                    <Link to="/SignUp" className='signUpAndIn'> הרשמה </Link>/ <Link to="/SignIn" className='signUpAndIn'>כניסה</Link>
+                </Form>
+            </Navbar.Collapse>
+        </Navbar>
     )
     userLink = (
         <Navbar bg="transparent" expand="lg">

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-// import './App.css';
-import NavBar from './navbar/Toolbar/NavBar';
+import './App.css';
+import NavBar from './navbar/NavBar';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './footer/footer';
-import SideDrawer from './navbar/SideDrawer/sideDrawer';
-
+// import SideDrawer from './navbar/SideDrawer/SideDrawer';
+// import Backdrop from './navbar/Backdrop/Backdrop'
 
 
 class App extends Component {
-  state = { isLogged: false ,}
+  state = { isLogged: false ,sideDrawerOpen:false}
 
   logged = (boolean) => {
     this.setState({ isLogged: boolean })
@@ -18,13 +18,14 @@ class App extends Component {
 
   render() {
 
-    return (
+      return (
       <BrowserRouter>
         <div className="App" style={{height:'100%'}}>
 
           <NavBar log={this.logged} />
-          <SideDrawer/>
-          <main style={{marginTop:'64px'}}></main>
+          {/* {sideDrawer}
+          {backdrop}
+          <main style={{marginTop:'64px'}}></main> */}
           <Footer />
 
         </div>

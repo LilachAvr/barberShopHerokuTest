@@ -29,8 +29,7 @@ class PriceList extends Component {
                     <thead className='table table-borderless'>
                         <tr>
                             <th scope="col" >מחיר</th>
-            <th>לילך</th>
-            <th>khklklhgjj</th>
+
                             <th scope="col">סוג תספורת</th>
                         </tr>
                     </thead>
