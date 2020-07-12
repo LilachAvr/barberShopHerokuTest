@@ -80,10 +80,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/'>בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
+                    <Link to='/'  className='links'>בית</Link>
+                    <Link to='/Gallery' className='links'>גלריה</Link>
+                    <Link to='/PriceList' className='links'>מחירון</Link>
+                    <Link to='/Products' className='links'>המוצרים שלנו</Link>
                 </Nav>
                 <Form inline>
                     <Link to="/SignUp" className='signUpAndIn'> הרשמה </Link>/ <Link to="/SignIn" className='signUpAndIn'>כניסה</Link>
@@ -100,12 +100,12 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/Home1'>בית</Link>
-                    <Link to='/Home1'>בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/SettingQueues'>קביעת תורים</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
+                    <Link className='links' to='/Home1'>בית</Link>
+                    <Link to='/Home1' className='links'>בית</Link>
+                    <Link to='/Gallery' className='links'>גלריה</Link>
+                    <Link to='/SettingQueues' className='links'>קביעת תורים</Link>
+                    <Link to='/PriceList' className='links'>מחירון</Link>
+                    <Link to='/Products' className='links'>המוצרים שלנו</Link>
                 </Nav>
                 <Form inline>
                     <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>

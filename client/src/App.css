@@ -10,8 +10,9 @@ body{
 #root {
     /* text-align: center; */
     background-size: cover;
-    /* background-image: url(/SharedScreenshot4.jpg); */
-    background: linear-gradient(#141e30, #243b55);
+    background-image: url(/84983794-styling-hair-with-combs-and-tools-in-barbershop-on-stone-background-top-view-mock-up.jpg);
+    /* background: linear-gradient(#141e30, #243b55); */
+    
   
     height: 100vh;
     /* max-width: 138%; */
@@ -48,6 +49,7 @@ body{
     .nav-link {
       display: block;
       padding: 0.5rem 0rem;
+      color: tomato;
   }
   .navbar a {
     color: #e6e6e6;
@@ -57,7 +59,9 @@ body{
     text-shadow: 1px 1px rgb(107, 107, 107);
     font-size: large;
     font-weight: 700;
-    text-align: end;
+    text-align: center;
+    /* padding: 0 0 1px 0px; */
+    /* border-bottom: 8px solid; */
 }
     .navbar a:hover{
       color: rgb(252, 249, 249);
@@ -98,12 +102,10 @@ body{
       outline: none;
       direction: rtl;
     } */ 
-    .mr-auto, .mx-auto {
+    /* .mr-auto, .mx-auto {
       margin: 0 24% 0 27% !important;
-  }
-    .navbar-dark .navbar-nav .nav-link {
-      color: #e2e1df;
-  }
+  } */
+
   .navbar-toggler-icon{
     font-size: small;
    
@@ -113,7 +115,7 @@ body{
   }
   .navbar.navbar-expand-lg.navbar-light.bg-transparent{
     /* background-color: #88040479!important; */
-    background: linear-gradient(#141e30, #243b55);
+    /* background: linear-gradient(#141e30, #243b55); */
   }
   span.nav-link {
     /* font-size: 16px; */
@@ -122,8 +124,9 @@ body{
     text-shadow: none;
     text-transform: capitalize;
     /* font-size: 13px; */
+    color: black;
     direction: rtl;
-    text-align: end;
+    text-align: center;
     display: contents;
   }
   .iconLocation{
@@ -171,10 +174,29 @@ body{
 .navbar-collapse .collapse .show{
 padding: 10%;
 }
-
+.navbar-collapse{
+  background: linear-gradient(#d2d2d2, #272c32);
+}
 .signUpAndIn{
     margin: 0 !important;
 }
 a.navbar-brand{
     margin: 0 !important;
+}
+.navbar-light .navbar-brand {
+  color: rgba(0,0,0,.9);
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 0; */
+  
+  /* margin: 92px 19px; */
+  list-style: none;
+  /* padding: 0% 22%; */
+  padding-right: 21%;
+}
+
+.links{
+  padding: 20% 0% !important;
 }

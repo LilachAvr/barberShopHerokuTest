@@ -148,7 +148,8 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
-  background: linear-gradient(#141e30, #243b55);
+  background-image: url(/84983794-styling-hair-with-combs-and-tools-in-barbershop-on-stone-background-top-view-mock-up.jpg);
+  background-size: cover;  
 }
 
 .login-box {
