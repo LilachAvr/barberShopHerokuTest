@@ -39,7 +39,7 @@ class SignUp extends Component {
 
     render() {
 
-        const disabled = !this.state.phone || !this.state.password || !this.state.firstName || !this.state.lastName || !this.state.confirmPassword;
+        const disabled = !this.state.phone  || !this.state.firstName || !this.state.lastName ;
         if (this.state.flag) {
             return <Redirect to='/signIn' />
         }

@@ -70,7 +70,7 @@ class SignIn extends Component {
 
     render() {
         let ManagerTypeClose = () => this.setState({ ManagerTypeShow: false })
-        const disabled = !this.state.phone || !this.state.password
+        const disabled = !this.state.phone 
 
         return (
             <div>
