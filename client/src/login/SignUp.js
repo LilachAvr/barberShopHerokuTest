@@ -8,7 +8,7 @@ class SignUp extends Component {
 
     register = async () => {
 
-let count=0;
+
         const res = await axios.post('/users/signUp',
             {
                 firstName: this.state.firstName,
@@ -19,6 +19,7 @@ let count=0;
             })
             console.log(res,'wbeufwiefowjfw');
             this.setState({ flag: true })
+            let count=0;
             count++;
             console.log(count);
             
