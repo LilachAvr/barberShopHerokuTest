@@ -92,8 +92,8 @@ class NavBar extends Component {
         // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-                <img src='/logo.png' alt='logo' id='logoNaftali'/>
-                </Navbar.Brand>
+                <img src='/logo.png' alt='logo' id='logoNaftali' />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
@@ -137,75 +137,124 @@ class NavBar extends Component {
         //     </Navbar.Collapse>
         // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#">
+                <img src='/logo.png' alt='logo' id='logoNaftali' />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav.Link to='/Home1'>בית</Nav.Link>
+                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
+                    <Nav.Link to='/SettingQueues'>קביעת תורים</Nav.Link>
+                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
+                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <Nav.Link href="#featureggs">ttttt</Nav.Link>
+                        <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#deets">More deets</Nav.Link>
-                    <Nav.Link eventKey={2} href="#memes">
-                        Dank memes
-      </Nav.Link>
+                    <Nav.Link to='' onClick={this.logOUt.bind(this)}>יציאה</Nav.Link>
+                    {/* <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
     )
     adminLink = (
-        <Navbar bg="transparent" expand="lg">
-            <Navbar.Brand href="#home">
-                <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-                </span>
+        // <Navbar bg="transparent" expand="lg">
+        //     <Navbar.Brand href="#home">
+        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
+        //         </span>
+        //     </Navbar.Brand>
+        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //     <Navbar.Collapse id="basic-navbar-nav">
+        //         <Nav className="mr-auto">
+        //             <Link to='/WebManager'>בית</Link>
+        //             <Link to='/WebManager'>בית</Link>
+        //             <Link to='/Gallery'>גלריה</Link>
+        //             <Link to='/SettingQAdmin'>קביעת תורים</Link>
+        //             <Link to='/PriceList'>מחירון</Link>
+        //             <Link to='/Products'>המוצרים שלנו</Link>
+        //             <Link to='/ClientQueues'>תורים שנקבעו</Link>
+        //         </Nav>
+        //         <Form inline>
+        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
+        //         </Form>
+        //     </Navbar.Collapse>
+        // </Navbar>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#">
+                <img src='/logo.png' alt='logo' id='logoNaftali' />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/WebManager'>בית</Link>
-                    <Link to='/WebManager'>בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/SettingQAdmin'>קביעת תורים</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
-                    <Link to='/ClientQueues'>תורים שנקבעו</Link>
+                    <Nav.Link to="/">בית</Nav.Link>
+                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
+                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
+                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <Nav.Link href="#featureggs">ttttt</Nav.Link>
+                        <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
-                <Form inline>
-                    <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-                </Form>
+                <Nav>
+                    <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
+                    <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     )
 
     employeeLink = (
-        <Navbar bg="transparent" expand="lg">
-            <Navbar.Brand href="#home">
-                <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-                </span>
+        // <Navbar bg="transparent" expand="lg">
+        //     <Navbar.Brand href="#home">
+        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
+        //         </span>
+        //     </Navbar.Brand>
+        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //     <Navbar.Collapse id="basic-navbar-nav">
+        //         <Nav className="mr-auto">
+        //             <Link to='/WebManager'>בית</Link>
+        //             <Link to='/Gallery'>גלריה</Link>
+        //             <Link to='/SettingQAdmin'>קביעת תורים</Link>
+        //             <Link to='/PriceList'>מחירון</Link>
+        //             <Link to='/Products'>המוצרים שלנו</Link>
+        //             <Link to='/ClientQueuesToEmployee'>תורים שנקבעו</Link>
+        //         </Nav>
+        //         <Form inline>
+        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
+        //         </Form>
+        //     </Navbar.Collapse>
+        // </Navbar>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#">
+                <img src='/logo.png' alt='logo' id='logoNaftali' />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/WebManager'>בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/SettingQAdmin'>קביעת תורים</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
-                    <Link to='/ClientQueuesToEmployee'>תורים שנקבעו</Link>
+                    <Nav.Link to="/">בית</Nav.Link>
+                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
+                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
+                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <Nav.Link href="#featureggs">ttttt</Nav.Link>
+                        <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
-                <Form inline>
-                    <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-                </Form>
+                <Nav>
+                    <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
+                    <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
-
 
     )
 
