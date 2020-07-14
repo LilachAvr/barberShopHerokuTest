@@ -97,10 +97,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to="/">בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
+                    <Link to="/" className='nav-link'>בית</Link>
+                    <Link to='/Gallery' className='nav-link'>גלריה</Link>
+                    <Link to='/PriceList' className='nav-link'>מחירון</Link>
+                    <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
@@ -110,7 +110,7 @@ class NavBar extends Component {
                 </Nav>
                 <Nav>
                     <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
-                    <Link eventKey={2} to="/SignUp"> התחברות </Link>
+                    <Link eventKey={2} to="/SignUp" className='nav-link'> התחברות </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -143,11 +143,11 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link to='/Home1'>בית</Nav.Link>
-                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
-                    <Nav.Link to='/SettingQueues'>קביעת תורים</Nav.Link>
-                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
-                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <Link to='/Home1' className='nav-link'>בית</Link>
+                    <Link to='/Gallery' className='nav-link'>גלריה</Link>
+                    <Link to='/SettingQueues' className='nav-link'>קביעת תורים</Link>
+                    <Link to='/PriceList' className='nav-link'>מחירון</Link>
+                    <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
@@ -156,7 +156,7 @@ class NavBar extends Component {
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link to='' onClick={this.logOUt.bind(this)}>יציאה</Nav.Link>
+                    <Link to='' onClick={this.logOUt.bind(this)} className='nav-link'>יציאה</Link>
                     {/* <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
@@ -191,19 +191,19 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to="/">בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                        <Nav.Link href="#featureggs">ttttt</Nav.Link>
-                        <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
+                    <Link to="/WebManager" className='nav-link'>בית</Link>
+                    <Link to='/Gallery' className='nav-link'>גלריה</Link>
+                    <Link to='/PriceList' className='nav-link'>מחירון</Link>
+                    <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
+                    <NavDropdown title="תורים" id="collasible-nav-dropdown">
+                        <Link to='/SettingQAdmin' className='nav-link'>קביעת תורים</Link>
+                        <Link to='/ClientQueues' className='nav-link'>תורים שנקבעו</Link>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link to='' onClick={this.logOUt.bind(this)}>יציאה</Nav.Link>
+                    <Nav.Link to='' onClick={this.logOUt.bind(this)} className='nav-link'>יציאה</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -237,10 +237,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to="/">בית</Link>
-                    <Link to='/Gallery'>גלריה</Link>
-                    <Link to='/PriceList'>מחירון</Link>
-                    <Link to='/Products'>המוצרים שלנו</Link>
+                    <Link to="/" className='nav-link'>בית</Link>
+                    <Link to='/Gallery' className='nav-link'>גלריה</Link>
+                    <Link to='/PriceList' className='nav-link'>מחירון</Link>
+                    <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
@@ -249,8 +249,7 @@ class NavBar extends Component {
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
-                    <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link>
+                    <Nav.Link to='' onClick={this.logOUt.bind(this)} className='nav-link'>יציאה</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
