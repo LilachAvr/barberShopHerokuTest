@@ -14,7 +14,7 @@ class SignUp extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 phone: this.state.phone,
-                // password: this.state.password,
+                password: this.state.password,
                 // confirmPassword : this.state.confirmPassword
             })
             console.log(res,'wbeufwiefowjfw');
@@ -39,7 +39,7 @@ class SignUp extends Component {
 
     render() {
 
-        const disabled = !this.state.phone  || !this.state.firstName || !this.state.lastName ;
+        const disabled = !this.state.phone || !this.state.password || !this.state.firstName || !this.state.lastName || !this.state.confirmPassword;
         if (this.state.flag) {
             return <Redirect to='/signIn' />
         }
@@ -69,7 +69,7 @@ class SignUp extends Component {
                                 onChange={event => this.setState({ phone: event.target.value })} />
                         </div>
 
-                        {/* <div className="user-box">
+                        <div className="user-box">
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder='password'
                                 onChange={event => this.setState({ password: event.target.value })} />
                         </div>
@@ -77,7 +77,7 @@ class SignUp extends Component {
                         <div className="user-box">
                             <input type="password" className="form-control" id="exampleInputPassword" placeholder='Confirm password'
                                 onChange={event => this.setState({ confirmPassword: event.target.value })} />
-                        </div> */}
+                        </div>
 
 
 

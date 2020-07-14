@@ -61,36 +61,36 @@ router.post("/users/login", async (req, res, next) => {
     if (!user) {
         return res.status(404).send("The phone doesn't exist");
     }
-    // const validPassword = await user.validatePassword(password)
-    // if (!validPassword) {
-    //     res.status(401).json({
-    //         auth: false,
-    //         token: null
-    //     })
-    // }
+    const validPassword = await user.validatePassword(password)
+    if (!validPassword) {
+        res.status(401).json({
+            auth: false,
+            token: null
+        })
+    }
     const token = await generateJWT(user)
 
     res.json({ auth: true, token });
 });
 
-// router.get('/users/getUser', verifyToken, async (req, res, next) => {
-//     const user = await User.findById(req.userId, { password: 0 })
-//     if (!user) {
-//         return res.status(404).send('No user found');
-//     }
-//     res.json(user);
-// });
+router.get('/users/getUser', verifyToken, async (req, res, next) => {
+    const user = await User.findById(req.userId, { password: 0 })
+    if (!user) {
+        return res.status(404).send('No user found');
+    }
+    res.json(user);
+});
 
-// router.get("/Users/me", verifyToken, async (req, res, next) => {
-//     const user = await User.findById(req.userId, { password: 0 })
-//     token = req.get('x-access-token')
-//     console.log(token);
+router.get("/Users/me", verifyToken, async (req, res, next) => {
+    const user = await User.findById(req.userId, { password: 0 })
+    token = req.get('x-access-token')
+    console.log(token);
 
-//     if (!user) {
-//         return res.status(404).send('No user found');
-//     }
-//     res.json(user);
-// });
+    if (!user) {
+        return res.status(404).send('No user found');
+    }
+    res.json(user);
+});
 
 
 router.post("/userAdmin/register", async (req, res, next) => {
@@ -100,9 +100,9 @@ router.post("/userAdmin/register", async (req, res, next) => {
         lastName,
         email,
         phone,
-        // password
+        password
     })
-    // user.password = await user.encryptPassword(user.password);
+    user.password = await user.encryptPassword(user.password);
     await user.save();
 
     const token = await generateJWT(user)
