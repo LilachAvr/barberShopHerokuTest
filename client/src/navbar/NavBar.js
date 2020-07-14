@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../home/Home.css';
 import { BrowserRouter, Link, Switch, Route, withRouter } from 'react-router-dom';
-import { Navbar, Form, Nav } from 'react-bootstrap';
+import { Navbar, Form, Nav, NavDropdown } from 'react-bootstrap';
 import Home from '../home/Home';
 import Home1 from '../home/Home1';
 import SettingQueues from '../settingQueue/SettingQueues';
@@ -72,44 +72,90 @@ class NavBar extends Component {
 
 
     loginRegLink = (
-        <Navbar bg="transparent" expand="lg">
-            <Navbar.Brand href="#home">
-                <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-                </span>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+        // <Navbar bg="transparent" expand="lg">
+        //     <Navbar.Brand href="#home">
+        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
+        //         </span>
+        //     </Navbar.Brand>
+        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //     <Navbar.Collapse id="basic-navbar-nav">
+        //         <Nav className="mr-auto">
+        //             <Link to='/' className='links'>בית</Link>
+        //             <Link to='/Gallery' className='links'>גלריה</Link>
+        //             <Link to='/PriceList' className='links'>מחירון</Link>
+        //             <Link to='/Products' className='links'>המוצרים שלנו</Link>
+        //         </Nav>
+        //         <Form inline>
+        //             <Link to="/SignUp" className='signUpAndIn'> הרשמה </Link>/ <Link to="/SignIn" className='signUpAndIn'>כניסה</Link>
+        //         </Form>
+        //     </Navbar.Collapse>
+        // </Navbar>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to='/'  className='links'>בית</Link>
-                    <Link to='/Gallery' className='links'>גלריה</Link>
-                    <Link to='/PriceList' className='links'>מחירון</Link>
-                    <Link to='/Products' className='links'>המוצרים שלנו</Link>
+                    <Nav.Link href="#features">Features</Nav.Link>
+                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
-                <Form inline>
-                    <Link to="/SignUp" className='signUpAndIn'> הרשמה </Link>/ <Link to="/SignIn" className='signUpAndIn'>כניסה</Link>
-                </Form>
+                <Nav>
+                    <Nav.Link href="#deets">More deets</Nav.Link>
+                    <Nav.Link eventKey={2} href="#memes">
+                        Dank memes
+  </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     )
     userLink = (
-        <Navbar bg="transparent" expand="lg">
-            <Navbar.Brand href="#home">
-                <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-                </span>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+        // <Navbar bg="transparent" expand="lg">
+        //     <Navbar.Brand href="#home">
+        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
+        //         </span>
+        //     </Navbar.Brand>
+        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        //     <Navbar.Collapse id="basic-navbar-nav">
+        //         <Nav className="mr-auto">
+        //             <Link className='links' to='/Home1'>בית</Link>
+        //             <Link to='/Home1' className='links'>בית</Link>
+        //             <Link to='/Gallery' className='links'>גלריה</Link>
+        //             <Link to='/SettingQueues' className='links'>קביעת תורים</Link>
+        //             <Link to='/PriceList' className='links'>מחירון</Link>
+        //             <Link to='/Products' className='links'>המוצרים שלנו</Link>
+        //         </Nav>
+        //         <Form inline>
+        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
+        //         </Form>
+        //     </Navbar.Collapse>
+        // </Navbar>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link className='links' to='/Home1'>בית</Link>
-                    <Link to='/Home1' className='links'>בית</Link>
-                    <Link to='/Gallery' className='links'>גלריה</Link>
-                    <Link to='/SettingQueues' className='links'>קביעת תורים</Link>
-                    <Link to='/PriceList' className='links'>מחירון</Link>
-                    <Link to='/Products' className='links'>המוצרים שלנו</Link>
+                    <Nav.Link href="#features">Features</Nav.Link>
+                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
-                <Form inline>
-                    <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-                </Form>
+                <Nav>
+                    <Nav.Link href="#deets">More deets</Nav.Link>
+                    <Nav.Link eventKey={2} href="#memes">
+                        Dank memes
+      </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     )

@@ -15,7 +15,7 @@ class SignIn extends Component {
 
         axios.post('/users/login', {
             phone: this.state.phone,
-            password: this.state.password,
+            // password: this.state.password,
         }).then(res => {
             console.log(res.config.data);
 
@@ -86,10 +86,10 @@ class SignIn extends Component {
                                 onChange={event => this.setState({ phone: event.target.value })} required />
                             <small id="phoneHelp" className="form-text text-muted">We'll never share your phone with anyone else.</small>
                         </div>
-                        <div className='user-box'>
+                        {/* <div className='user-box'>
                             <input type="password" id="exampleInputPassword1" placeholder='password'
                                 onChange={event => this.setState({ password: event.target.value })} />
-                        </div>
+                        </div> */}
 
                         <button disabled={disabled} type="button" className="button-login"
                             onClick={() => {

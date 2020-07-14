@@ -21,7 +21,7 @@ body{
     background-position: top;
   }
     
-    #barberlogo{
+    /* #barberlogo{
       position: absolute;
       top: 10%;
       left: 40%;
@@ -30,7 +30,7 @@ body{
     position: absolute;
     top: 49%;
     left: 75%;
-  }
+  } */
     /* .App a{
       margin: 1%;
        padding: 10px;
@@ -46,23 +46,23 @@ body{
     .App a:hover { 
       background-color: rgba(201, 104, 25,0.500);
     }  */ 
-    .nav-link {
+    /* .nav-link {
       display: block;
       padding: 0.5rem 0rem;
       color: tomato;
-  }
-  .navbar a {
+  } */
+  /* .navbar a {
     color: #e6e6e6;
-    margin: 0 0px 0 80px;
+    margin: 0 0px 0 80px; */
     /* border-right: 1px solid; */
-    padding: 0px -27px 0 0px;
+    /* padding: 0px -27px 0 0px;
     text-shadow: 1px 1px rgb(107, 107, 107);
     font-size: large;
     font-weight: 700;
     text-align: center;
     /* padding: 0 0 1px 0px; */
     /* border-bottom: 8px solid; */
-}
+/* }
     .navbar a:hover{
       color: rgb(252, 249, 249);
       text-decoration: none;
@@ -80,7 +80,7 @@ body{
       font-size: 12px;
       white-space: nowrap;
       
-    }
+    } */
     /* #liLogin{
       border: 1px solid white;
       list-style: none;
@@ -106,35 +106,35 @@ body{
       margin: 0 24% 0 27% !important;
   } */
 
-  .navbar-toggler-icon{
+  /* .navbar-toggler-icon{
     font-size: small;
    
   }
   .navbar-toggler{
      text-decoration: none;
   }
-  .navbar.navbar-expand-lg.navbar-light.bg-transparent{
+  .navbar.navbar-expand-lg.navbar-light.bg-transparent{ */
     /* background-color: #88040479!important; */
     /* background: linear-gradient(#141e30, #243b55); */
-  }
-  span.nav-link {
+  /* }
+  span.nav-link { */
     /* font-size: 16px; */
-    margin-bottom: 0%;
+    /* margin-bottom: 0%;
     font-family: cursive;
     text-shadow: none;
-    text-transform: capitalize;
+    text-transform: capitalize; */
     /* font-size: 13px; */
-    color: black;
+    /* color: black;
     direction: rtl;
     text-align: center;
     display: contents;
-  }
-  .iconLocation{
+  } */
+  /* .iconLocation{ */
     /* white-space: nowrap; */
   /* padding: 0; */
-    max-width: 30px;
+    /* max-width: 30px; */
     /* height: auto; */
-  }
+  /* }
   .location{
   padding: 0 !important;
   width: 28px;
@@ -160,7 +160,7 @@ body{
     justify-content: space-between;
     padding: .5rem 1rem;
     z-index: 99999;
-}
+} */
   /* dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -171,7 +171,7 @@ body{
     height: 100vh;
     z-index: 999;
 } */
-.navbar-collapse .collapse .show{
+/* .navbar-collapse .collapse .show{
 padding: 10%;
 }
 .navbar-collapse{
@@ -188,15 +188,15 @@ a.navbar-brand{
 }
 .navbar-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
   /* padding-left: 0; */
   
   /* margin: 92px 19px; */
-  list-style: none;
+  /* list-style: none; */
   /* padding: 0% 22%; */
-  padding-right: 21%;
+  /* padding-right: 21%;
 }
 
 .links{
   padding: 20% 0% !important;
-}
+} */
