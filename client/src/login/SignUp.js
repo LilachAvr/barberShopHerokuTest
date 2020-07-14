@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 
 class SignUp extends Component {
-    state = { file: '', phone: '', password: '', firstName: '', lastName: '', confirmPassword: '', flag: false, isError: false, terms: false }
+    state = { file: '', phone: '', password: '', firstName: '', lastName: '', confirmPassword: '', flag: false, isError: false, terms: false,countClient:0 }
 
     register = async () => {
 
@@ -19,9 +19,7 @@ class SignUp extends Component {
             })
             console.log(res,'wbeufwiefowjfw');
             this.setState({ flag: true })
-            let count=0;
-            count++;
-            console.log(count);
+       this.setState({countClient:this.state.countClient+1})
             
             // .then(res => {
             //     console.log(res);
@@ -86,6 +84,7 @@ class SignUp extends Component {
 
 
                         <button disabled={disabled} type="button" className="button-login" onClick={this.register}>Register</button>
+                        <p>{this.state.countClient}</p>
                         {this.state.isError ? <p style={{ color: 'red' }}>  Register Error</p> : ''}
                         <div>
                             <Link to='/TermsOfUse' id='terms' onClick={() => this.setState({ terms: true })}>תנאי שימוש</Link>
