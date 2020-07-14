@@ -20,6 +20,7 @@ class SignUp extends Component {
             console.log(res,'wbeufwiefowjfw');
             this.setState({ flag: true })
        this.setState({countClient:this.state.countClient+1})
+            console.log(res.data);
             
             // .then(res => {
             //     console.log(res);

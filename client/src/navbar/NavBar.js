@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../home/Home.css';
 import { BrowserRouter, Link, Switch, Route, withRouter } from 'react-router-dom';
-import { Navbar,  Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Home from '../home/Home';
 import Home1 from '../home/Home1';
 import SettingQueues from '../settingQueue/SettingQueues';
@@ -33,13 +33,6 @@ import NotFound from '../notFound/NotFound';
 class NavBar extends Component {
     state = { sideDrawerOpen: false, firstName: { firstName: null, phoneNumber: null }, dateHistory: { date: '', time: '' }, name: { userName: '', phone: '' } }
     name = ''
-    // date = (date, time) => {
-    //     let temp = { date, time }
-    //     this.setState({ dateHistory: temp })
-    //     console.log('drdfyhjlkjhggdfghjo;klikjdhtsgdfghijlo;lkjfhdgdfghkjl');
-
-    // }
-
     username = (name) => {
         let tmp = [this.state.firstName]
         let tempUser = { name: name.firstName, lastname: name.lastName }
@@ -72,24 +65,6 @@ class NavBar extends Component {
 
 
     loginRegLink = (
-        // <Navbar bg="transparent" expand="lg">
-        //     <Navbar.Brand href="#home">
-        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-        //         </span>
-        //     </Navbar.Brand>
-        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //     <Navbar.Collapse id="basic-navbar-nav">
-        //         <Nav className="mr-auto">
-        //             <Link to='/' className='links'>בית</Link>
-        //             <Link to='/Gallery' className='links'>גלריה</Link>
-        //             <Link to='/PriceList' className='links'>מחירון</Link>
-        //             <Link to='/Products' className='links'>המוצרים שלנו</Link>
-        //         </Nav>
-        //         <Form inline>
-        //             <Link to="/SignUp" className='signUpAndIn'> הרשמה </Link>/ <Link to="/SignIn" className='signUpAndIn'>כניסה</Link>
-        //         </Form>
-        //     </Navbar.Collapse>
-        // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
                 <img src='/logo.png' alt='logo' id='logoNaftali' />
@@ -110,32 +85,17 @@ class NavBar extends Component {
                 </Nav>
                 <Nav>
                     <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
-                    <Link eventKey={2} to="/SignUp" className='nav-link'> התחברות </Link>
+                    <NavDropdown title="התחברות" id="collasible-nav-dropdown">
+                        <Link to="/SignIn">לקוח קיים</Link>
+
+                        <NavDropdown.Divider />
+                        <Link to="/SignUp">הרשמה</Link>
+                    </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
     )
     userLink = (
-        // <Navbar bg="transparent" expand="lg">
-        //     <Navbar.Brand href="#home">
-        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-        //         </span>
-        //     </Navbar.Brand>
-        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //     <Navbar.Collapse id="basic-navbar-nav">
-        //         <Nav className="mr-auto">
-        //             <Link className='links' to='/Home1'>בית</Link>
-        //             <Link to='/Home1' className='links'>בית</Link>
-        //             <Link to='/Gallery' className='links'>גלריה</Link>
-        //             <Link to='/SettingQueues' className='links'>קביעת תורים</Link>
-        //             <Link to='/PriceList' className='links'>מחירון</Link>
-        //             <Link to='/Products' className='links'>המוצרים שלנו</Link>
-        //         </Nav>
-        //         <Form inline>
-        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-        //         </Form>
-        //     </Navbar.Collapse>
-        // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
                 <img src='/logo.png' alt='logo' id='logoNaftali' />
@@ -157,33 +117,11 @@ class NavBar extends Component {
                 </Nav>
                 <Nav>
                     <Link to='' onClick={this.logOUt.bind(this)} className='nav-link'>יציאה</Link>
-                    {/* <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
     )
     adminLink = (
-        // <Navbar bg="transparent" expand="lg">
-        //     <Navbar.Brand href="#home">
-        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-        //         </span>
-        //     </Navbar.Brand>
-        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //     <Navbar.Collapse id="basic-navbar-nav">
-        //         <Nav className="mr-auto">
-        //             <Link to='/WebManager'>בית</Link>
-        //             <Link to='/WebManager'>בית</Link>
-        //             <Link to='/Gallery'>גלריה</Link>
-        //             <Link to='/SettingQAdmin'>קביעת תורים</Link>
-        //             <Link to='/PriceList'>מחירון</Link>
-        //             <Link to='/Products'>המוצרים שלנו</Link>
-        //             <Link to='/ClientQueues'>תורים שנקבעו</Link>
-        //         </Nav>
-        //         <Form inline>
-        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-        //         </Form>
-        //     </Navbar.Collapse>
-        // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
                 <img src='/logo.png' alt='logo' id='logoNaftali' />
@@ -210,26 +148,6 @@ class NavBar extends Component {
     )
 
     employeeLink = (
-        // <Navbar bg="transparent" expand="lg">
-        //     <Navbar.Brand href="#home">
-        //         <span className="nav-link" style={{ color: 'white' }}><i className="fa fa-clock"> 9:00-20:00</i> | <i className="fas fa-mobile-alt"> 050-1234567</i>
-        //         </span>
-        //     </Navbar.Brand>
-        //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //     <Navbar.Collapse id="basic-navbar-nav">
-        //         <Nav className="mr-auto">
-        //             <Link to='/WebManager'>בית</Link>
-        //             <Link to='/Gallery'>גלריה</Link>
-        //             <Link to='/SettingQAdmin'>קביעת תורים</Link>
-        //             <Link to='/PriceList'>מחירון</Link>
-        //             <Link to='/Products'>המוצרים שלנו</Link>
-        //             <Link to='/ClientQueuesToEmployee'>תורים שנקבעו</Link>
-        //         </Nav>
-        //         <Form inline>
-        //             <Link to='' onClick={this.logOUt.bind(this)} className="nav-link"> יציאה</Link>
-        //         </Form>
-        //     </Navbar.Collapse>
-        // </Navbar>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
                 <img src='/logo.png' alt='logo' id='logoNaftali' />
@@ -253,7 +171,6 @@ class NavBar extends Component {
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
-
     )
 
     render() {
