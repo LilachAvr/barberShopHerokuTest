@@ -116,6 +116,7 @@ class NavBar extends Component {
                     </NavDropdown>
                 </Nav>
                 <Nav>
+                    <Nav.Link href="#deets">שלום , {this.state.name.userName} !</Nav.Link>
                     <Link to='' onClick={this.logOUt.bind(this)} className='nav-link'>יציאה</Link>
                 </Nav>
             </Navbar.Collapse>
