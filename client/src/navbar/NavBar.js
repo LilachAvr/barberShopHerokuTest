@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../home/Home.css';
 import { BrowserRouter, Link, Switch, Route, withRouter } from 'react-router-dom';
-import { Navbar, Form, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar,  Nav, NavDropdown } from 'react-bootstrap';
 import Home from '../home/Home';
 import Home1 from '../home/Home1';
 import SettingQueues from '../settingQueue/SettingQueues';

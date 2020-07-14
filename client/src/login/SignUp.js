@@ -8,7 +8,7 @@ class SignUp extends Component {
 
     register = async () => {
 
-
+let count=0;
         const res = await axios.post('/users/signUp',
             {
                 firstName: this.state.firstName,
@@ -19,6 +19,9 @@ class SignUp extends Component {
             })
             console.log(res,'wbeufwiefowjfw');
             this.setState({ flag: true })
+            count++;
+            console.log(count);
+            
             // .then(res => {
             //     console.log(res);
             //     if (res.status === 201) {

@@ -31,7 +31,7 @@ z-index: 9999;
 }
 
 .navbar-nav{
-margin: 0 50% 0 0;
+margin: 0 33% 0 0;
 }
 
     
@@ -60,6 +60,8 @@ margin: 0 50% 0 0;
     .App a:hover { 
       background-color: rgba(201, 104, 25,0.500);
     }  */ 
+
+  
     .nav-link {
       font-size: large;
     font-weight: bold;

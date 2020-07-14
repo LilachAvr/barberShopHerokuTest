@@ -79,11 +79,11 @@ text-align: end;
 .container {
     max-width: 1276px;
 }
-.btn-outline-info {
-    color: white !important;
+.btn-outline {
+    color: #17a2b8 !important;
     border-color: #17a2b8;
 }
-.btn-outline-info:hover{
+.btn-outline:hover{
     background-color: #17a2b8 !important;
     color: #ffffff !important;
     border-color: #17a2b8 !important;

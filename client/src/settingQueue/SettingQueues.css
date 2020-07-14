@@ -64,7 +64,7 @@ button:hover{
 @media all and (max-width:30em){
     button{
         display: block;
-        margin: 0.4em auto;
+        /* margin: 0.4em auto; */
     }
 }
 

@@ -1,47 +1,49 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './WebManager.css';
-
+import NewUpdates from './NewUpdates';
+import { ButtonToolbar } from 'react-bootstrap';
 
 
 class WebManager extends Component {
-    state = {acTime: false, setclientqueues:false, updatePriceList:false}
+
+    state = { newUpdatesShow: false, acTime: false, setclientqueues: false, updatePriceList: false, updateGallery: false }
     render() {
-        if (this.state.acTime) {
-            return <Redirect to='/UpdateActivityTime' />
+        let newUpdatesClose = () => this.setState({ newUpdatesShow: false })
+        if (this.state.updateGallery) {
+            return <Redirect to='/UploadImages' />
         }
         if (this.state.setclientqueues) {
             return <Redirect to='/SettingQAdmin' />
         }
-        if(this.state.updatePriceList){
-            return <Redirect to='UpdatePriceList'/>
+        if (this.state.updatePriceList) {
+            return <Redirect to='UpdatePriceList' />
         }
         return (
             <div className='container1'>
                 <div className="all">
-                    <div className="lefter" onClick={()=>this.setState({acTime:true})}>
-                        {/* <div className="text">שעות פעילות + טלפון</div> */}
-                        <button>שעות פעילות + טלפון</button>
-                    </div>
-                    <div className="left">
-                        {/* <div className="text">עדכון גלריה</div> */}
+                    <div className="left" onClick={() => this.setState({ updateGallery: true })}>
                         <button>עדכון גלריה</button>
                     </div>
-                    <div className="center">
-                        {/* <i className="far fa-images"></i> */}
-                        <div className="explainer" onClick={()=>this.setState({setclientqueues:true})}><span>Hover me</span></div>
+                    <div className="center" onClick={() => this.setState({ setclientqueues: true })}>
                         <button>קביעת תורים</button>
-                        {/* <div className="text">קביעת תורים</div> */}
                     </div>
-                    <div className="right" onClick={()=>this.setState({updatePriceList:true})}>
+                    <div className="right" onClick={() => this.setState({ updatePriceList: true })}>
                         <button>עדכון מחירים</button>
-                        {/* <div className="text" >עדכון מחירים</div> */}
                     </div>
-                    <div className="righter">
-                        {/* <i className="far fa-images"></i> */}
-                        <button>עדכון מוצרים</button>
-                        {/* <div className="text">עדכון מוצרים</div> */}
-                    </div>
+
+                    <ButtonToolbar>
+                        <div className="righter">
+                            <button  onClick={() => {
+                                this.setState({ newUpdatesShow: true })
+                            }}>עדכונים חמים</button>
+                            <NewUpdates
+                                show={this.state.newUpdatesShow}
+                                onHide={newUpdatesClose}
+                            />
+                        </div>
+                    </ButtonToolbar>
+
                 </div>
 
 
