@@ -97,10 +97,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link to="/">בית</Nav.Link>
-                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
-                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
-                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <Link to="/">בית</Link>
+                    <Link to='/Gallery'>גלריה</Link>
+                    <Link to='/PriceList'>מחירון</Link>
+                    <Link to='/Products'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
@@ -110,7 +110,7 @@ class NavBar extends Component {
                 </Nav>
                 <Nav>
                     <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
-                    <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link>
+                    <Link eventKey={2} to="/SignUp"> התחברות </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -191,10 +191,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link to="/">בית</Nav.Link>
-                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
-                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
-                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <Link to="/">בית</Link>
+                    <Link to='/Gallery'>גלריה</Link>
+                    <Link to='/PriceList'>מחירון</Link>
+                    <Link to='/Products'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
@@ -203,8 +203,7 @@ class NavBar extends Component {
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
-                    <Nav.Link eventKey={2} to="/SignUp"> התחברות </Nav.Link>
+                    <Nav.Link to='' onClick={this.logOUt.bind(this)}>יציאה</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -238,10 +237,10 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link to="/">בית</Nav.Link>
-                    <Nav.Link to='/Gallery'>גלריה</Nav.Link>
-                    <Nav.Link to='/PriceList'>מחירון</Nav.Link>
-                    <Nav.Link to='/Products'>המוצרים שלנו</Nav.Link>
+                    <Link to="/">בית</Link>
+                    <Link to='/Gallery'>גלריה</Link>
+                    <Link to='/PriceList'>מחירון</Link>
+                    <Link to='/Products'>המוצרים שלנו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
