@@ -20,6 +20,20 @@ body{
     /* background-repeat: no-repeat; */
     background-position: top;
   }
+  #logoNaftali{
+    border-radius: 50%;
+    width: 58px;
+    height: 6vh;
+  }
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark{
+direction: rtl;
+z-index: 9999;
+}
+
+.navbar-nav{
+margin: 0 50% 0 0;
+}
+
     
     /* #barberlogo{
       position: absolute;
@@ -46,11 +60,16 @@ body{
     .App a:hover { 
       background-color: rgba(201, 104, 25,0.500);
     }  */ 
-    /* .nav-link {
-      display: block;
-      padding: 0.5rem 0rem;
-      color: tomato;
-  } */
+    .nav-link {
+      font-size: large;
+    font-weight: bold;
+    margin-right:20px;
+  }
+  .nav-link:hover {
+    color: rgba(255,255,255,.5);
+    border-bottom: rgba(255,255,255,.5) 2px solid;
+    ;
+}
   /* .navbar a {
     color: #e6e6e6;
     margin: 0 0px 0 80px; */
