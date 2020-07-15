@@ -15,36 +15,26 @@ class SignIn extends Component {
 
         axios.post('/users/login', {
             phone: this.state.phone,
-            password: this.state.password,
+            // password: this.state.password,
         }).then(res => {
-            console.log(res.config.data);
-
-
-            console.log(res.config.data.split(',')[0].split(':')[1].split('"')[1]);
             this.phone = res.config.data.split(',')[0].split(':')[1].split('"')[1];
-            console.log(this.phone);
             if (res.status === 200) {
                 localStorage.setItem("usertoken", JSON.stringify(res.data));
                 this.setState({ flag: true })
-                console.log(this.token)
-                // this.props.userName(this.phone)/
                 this.token = res.data.token
-                console.log(this.token);
                 this.props.log(true)
                 this.getDetilsFromUserToken(this.token)
             }
             else {
-                console.log(`error code ${res.status}`);
+
                 this.setState({ isError: true });
             }
         }).catch(err => {
-            console.log(err);
             this.setState({ isError: true });
         })
     }
 
     getDetilsFromUserToken = () => {
-        console.log(this.token);
 
         axios.get('/Users/me', { headers: { 'x-access-token': this.token } })
 
@@ -52,17 +42,8 @@ class SignIn extends Component {
 
                 this.userName = res.data.firstName
                 this.phone = res.data.phone
-                console.log(this.userName, this.phone);
                 this.props.logs(this.userName, this.phone, this.token)
-                console.log(this.userName, this.phone);
-
-                console.log(res.data);
-
-
-
-                // this.userphone = res.data.phone
             }).catch(err => {
-
                 console.log(err);
             })
 
@@ -70,7 +51,8 @@ class SignIn extends Component {
 
     render() {
         let ManagerTypeClose = () => this.setState({ ManagerTypeShow: false })
-        const disabled = !this.state.phone || !this.state.password
+        const disabled = !this.state.phone
+        //  || !this.state.password
 
         return (
             <div>
@@ -86,24 +68,18 @@ class SignIn extends Component {
                                 onChange={event => this.setState({ phone: event.target.value })} required />
                             <small id="phoneHelp" className="form-text text-muted">We'll never share your phone with anyone else.</small>
                         </div>
-                        <div className='user-box'>
+                        {/* <div className='user-box'>
                             <input type="password" id="exampleInputPassword1" placeholder='password'
                                 onChange={event => this.setState({ password: event.target.value })} />
-                        </div>
+                        </div> */}
 
                         <button disabled={disabled} type="button" className="button-login"
-                            onClick={() => {
-                                this.login()
-                                // this.getDetilsFromUserToken()
-                            }}
-                        >Sign - In</button>
-
-
+                            onClick={() => { this.login() }} >
+                            Sign - In
+                                </button>
                         {this.state.isError ? <p style={{ color: 'red' }}>login error</p> : ''}
-
                         <br /> <br />
-
-                        <p className='forgotPassword'>forgot your password</p>
+                        {/* <p className='forgotPassword'>forgot your password</p> */}
 
                         <ButtonToolbar>
                             <button className='btnTypeManager' onClick={() => {
