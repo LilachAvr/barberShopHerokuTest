@@ -4,7 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 
 class SignUp extends Component {
-    state = { file: '', phone: '', password: '', firstName: '', lastName: '', confirmPassword: '', flag: false, isError: false, terms: false,countClient:0 }
+    state = { file: '', phone: '', password: '', firstName: '', lastName: '', confirmPassword: '', flag: false, isError: false, terms: false }
 
     register = async () => {
 
@@ -14,14 +14,11 @@ class SignUp extends Component {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 phone: this.state.phone,
-                // password: this.state.password,
-                // confirmPassword : this.state.confirmPassword
+                password: this.state.password,
+                confirmPassword : this.state.confirmPassword
             })
             console.log(res,'wbeufwiefowjfw');
             this.setState({ flag: true })
-       this.setState({countClient:this.state.countClient+1})
-            console.log(res.data);
-            
             // .then(res => {
             //     console.log(res);
             //     if (res.status === 201) {
@@ -42,9 +39,7 @@ class SignUp extends Component {
 
     render() {
 
-        const disabled = !this.state.phone || !this.state.firstName || !this.state.lastName
-        // || !this.state.password 
-        //  || !this.state.confirmPassword;
+        const disabled = !this.state.phone || !this.state.password || !this.state.firstName || !this.state.lastName || !this.state.confirmPassword;
         if (this.state.flag) {
             return <Redirect to='/signIn' />
         }
@@ -74,7 +69,7 @@ class SignUp extends Component {
                                 onChange={event => this.setState({ phone: event.target.value })} />
                         </div>
 
-                        {/* <div className="user-box">
+                        <div className="user-box">
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder='password'
                                 onChange={event => this.setState({ password: event.target.value })} />
                         </div>
@@ -82,12 +77,11 @@ class SignUp extends Component {
                         <div className="user-box">
                             <input type="password" className="form-control" id="exampleInputPassword" placeholder='Confirm password'
                                 onChange={event => this.setState({ confirmPassword: event.target.value })} />
-                        </div> */}
+                        </div>
 
 
 
                         <button disabled={disabled} type="button" className="button-login" onClick={this.register}>Register</button>
-                        <p>{this.state.countClient}</p>
                         {this.state.isError ? <p style={{ color: 'red' }}>  Register Error</p> : ''}
                         <div>
                             <Link to='/TermsOfUse' id='terms' onClick={() => this.setState({ terms: true })}>תנאי שימוש</Link>
