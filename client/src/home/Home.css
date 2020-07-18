@@ -28,7 +28,7 @@
 }
 .container h5{
 direction: ltr;
-text-align: end;
+text-align: center;
       
 }
 .container button{
@@ -64,7 +64,8 @@ text-align: end;
   }
 
   h5{
-    background-color: #84755ccf;
+    background-color: #3c5069cf;
+    border-radius: 5%;
     padding: 4%;
   }
 #buttonDetils{

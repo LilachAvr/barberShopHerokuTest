@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../admin/BusinessManager/Admin.css';
 import { Redirect } from 'react-router-dom';
-import axios from 'axios';
+import axios from 'axios'; 
 import { ButtonToolbar } from 'react-bootstrap';
 import SelectManagerType from './SelectManagerType'
 

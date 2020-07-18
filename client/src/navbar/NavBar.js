@@ -76,20 +76,20 @@ class NavBar extends Component {
                     <Link to='/Gallery' className='nav-link'>גלריה</Link>
                     <Link to='/PriceList' className='nav-link'>מחירון</Link>
                     <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                    {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
+                    </NavDropdown> */}
                 </Nav>
                 <Nav>
                     <Nav.Link href="#deets">שלום ,אורח!</Nav.Link>
                     <NavDropdown title="התחברות" id="collasible-nav-dropdown">
-                        <Link to="/SignIn">לקוח קיים</Link>
+                        <Link to="/SignIn" className='registered'>לקוח קיים</Link>
 
                         <NavDropdown.Divider />
-                        <Link to="/SignUp">הרשמה</Link>
+                        <Link to="/SignUp" className='registered'>הרשמה</Link>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>

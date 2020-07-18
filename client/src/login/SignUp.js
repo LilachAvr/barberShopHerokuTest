@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Login.css';
 import axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
 
@@ -53,7 +54,7 @@ class SignUp extends Component {
                     <h1>הרשמה</h1>
                     <form>
                         {/* <form className='form-manager'> */}
-                        <Link to='/SignIn' id='exist' onClick={() => this.setState({ flag: true })}>משתמש רשום</Link>
+                        {/* <Link to='/SignIn' id='exist' onClick={() => this.setState({ flag: true })}>משתמש רשום</Link> */}
 
                         <div className="user-box">
                             <input className="form-control" type="text" placeholder="שם פרטי"
@@ -70,12 +71,12 @@ class SignUp extends Component {
                         </div>
 
                         <div className="user-box">
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder='password'
+                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder='סיסמה'
                                 onChange={event => this.setState({ password: event.target.value })} />
                         </div>
 
                         <div className="user-box">
-                            <input type="password" className="form-control" id="exampleInputPassword" placeholder='Confirm password'
+                            <input type="password" className="form-control" id="exampleInputPassword" placeholder='אישור סיסמה'
                                 onChange={event => this.setState({ confirmPassword: event.target.value })} />
                         </div>
 

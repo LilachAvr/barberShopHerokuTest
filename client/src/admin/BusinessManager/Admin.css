@@ -96,3 +96,9 @@
 .text-muted {
     color: #fdfdfd!important;
 }
+
+::placeholder {
+    color: rgb(224, 224, 224);
+    opacity: 1; /* Firefox */
+    direction: rtl;
+  }
