@@ -1,8 +1,8 @@
 .table {
     color: white;
     text-align: center;
-    width: 45%;
-    height: 43vh;
+    width: 45% !important;
+    /* height: 43vh; */
     margin: auto;
     margin-top: 7%;
     background-color: #1f324a;

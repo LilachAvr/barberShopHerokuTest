@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './PriceList.css'
+import './PriceList.css'
 import axios from 'axios'
 
 class PriceList extends Component {

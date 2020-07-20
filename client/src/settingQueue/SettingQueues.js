@@ -280,6 +280,7 @@ class SettingQueues extends Component {
                     <button onClick={() => {
                         this.dateVal = x;
                         this.filt()
+                        
                     }}>הצג</button>
                     <h1>רשימת תורים</h1>
                     <div className='arrayQ'>

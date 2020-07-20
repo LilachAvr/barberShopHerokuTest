@@ -238,3 +238,10 @@ a.navbar-brand{
 .links{
   padding: 20% 0% !important;
 } */
+.fa, .fas {
+  font-weight: 900;
+  border: 7px solid #546E7A;
+  /* background color: g; */
+  background-color: #546E7A;
+  border-radius: 20px;
+}
