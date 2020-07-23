@@ -93,7 +93,7 @@ class SettingQueues extends Component {
             phone: this.props.username.phone,
             barber: this.chooseBarber
         }
-        console.log(data.time);
+        console.log(data);
 
         axios.post('/queues/scheduledCustomerQueues', data)
             .then(res => {

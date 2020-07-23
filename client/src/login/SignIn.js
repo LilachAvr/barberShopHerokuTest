@@ -70,7 +70,7 @@ class SignIn extends Component {
 
     render() {
         let ManagerTypeClose = () => this.setState({ ManagerTypeShow: false })
-        const disabled = !this.state.phone || !this.state.password
+        // const disabled = !this.state.phone || !this.state.password
 
         return (
             <div>
@@ -82,16 +82,17 @@ class SignIn extends Component {
                     <h1>לקוח קיים</h1>
                     <form>
                         <div className='user-box'>
-                            <input type="text" id="exampleInputphone1" aria-describedby="phoneHelp" placeholder='טלפון נייד'
+                            <input type="text" pattern="[789][0-9]{9}" id="exampleInputphone1" aria-describedby="phoneHelp" placeholder='טלפון נייד' name='username'
                                 onChange={event => this.setState({ phone: event.target.value })} required />
                             <small id="phoneHelp" className="form-text text-muted">We'll never share your phone with anyone else.</small>
                         </div>
                         <div className='user-box'>
                             <input type="password" id="exampleInputPassword1" placeholder='password'
-                                onChange={event => this.setState({ password: event.target.value })} />
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                onChange={event => this.setState({ password: event.target.value })} required/>
                         </div>
-
-                        <button disabled={disabled} type="button" className="button-login"
+{/* disabled={disabled}  */}
+                        <button type="button" className="button-login"
                             onClick={() => {
                                 this.login()
                                 // this.getDetilsFromUserToken()

@@ -66,18 +66,18 @@ class SignUp extends Component {
                         </div>
 
                         <div className="user-box">
-                            <input type="number" className="form-control" id="exampleInputphone1" aria-describedby="phoneHelp" placeholder='טלפון נייד'
+                            <input type="text" pattern="[789][0-9]{9}" className="form-control" id="exampleInputphone1" aria-describedby="phoneHelp" placeholder='טלפון נייד'
                                 onChange={event => this.setState({ phone: event.target.value })} />
                         </div>
 
                         <div className="user-box">
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder='סיסמה'
+                            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" className="form-control" id="exampleInputPassword1" placeholder='סיסמה'
                                 onChange={event => this.setState({ password: event.target.value })} />
                         </div>
 
                         <div className="user-box">
-                            <input type="password" className="form-control" id="exampleInputPassword" placeholder='אישור סיסמה'
-                                onChange={event => this.setState({ confirmPassword: event.target.value })} />
+                            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" className="form-control" id="exampleInputPassword" placeholder='אישור סיסמה'
+                                onChange={event => this.setState({ confirmPassword: event.target.value })} required/>
                         </div>
 
 
