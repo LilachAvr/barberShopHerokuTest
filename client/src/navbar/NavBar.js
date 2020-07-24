@@ -63,11 +63,10 @@ class NavBar extends Component {
     }
 
 
-
     loginRegLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-                <img src='/logo.png' alt='logo' id='logoNaftali' />
+            <Link to='/'>  <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -98,7 +97,7 @@ class NavBar extends Component {
     userLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-                <img src='/logo.png' alt='logo' id='logoNaftali' />
+              <Link to='/Home1'>  <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -125,7 +124,7 @@ class NavBar extends Component {
     adminLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-                <img src='/logo.png' alt='logo' id='logoNaftali' />
+               <Link to='/WebManager'> <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -135,10 +134,10 @@ class NavBar extends Component {
                     <Link to='/PriceList' className='nav-link'>מחירון</Link>
                     <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
                     <NavDropdown title="תורים" id="collasible-nav-dropdown">
-                        <Link to='/SettingQAdmin' className='nav-link-admin'>קביעת תורים</Link>
-                        <Link to='/ClientQueues' className='nav-link-admin'>תורים שנקבעו</Link>
+                        <NavDropdown.Item to='/SettingQAdmin' className='nav-link-admin'>קביעת תורים</NavDropdown.Item>
+                        {/* <Link to='/ClientQueues' className='nav-link-admin'>תורים שנקבעו</Link> */}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item href="/ClientQueues">תורים שנקבעו</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
@@ -151,15 +150,17 @@ class NavBar extends Component {
     employeeLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-                <img src='/logo.png' alt='logo' id='logoNaftali' />
+               <Link to='WebManager'> <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Link to="/" className='nav-link'>בית</Link>
-                    <Link to='/Gallery' className='nav-link'>גלריה</Link>
-                    <Link to='/PriceList' className='nav-link'>מחירון</Link>
-                    <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
+                <Link to='/WebManager'>בית</Link>
+                     <Link to='/Gallery'>גלריה</Link>
+                     <Link to='/SettingQAdmin'>קביעת תורים</Link>
+                     <Link to='/PriceList'>מחירון</Link>
+                     <Link to='/Products'>המוצרים שלנו</Link>
+                     <Link to='/ClientQueuesToEmployee'>תורים שנקבעו</Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                         <Nav.Link href="#featureggs">ttttt</Nav.Link>
                         <Nav.Link href="#pricifdgng">Prittttcing</Nav.Link>
