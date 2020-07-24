@@ -102,7 +102,7 @@ class UpdatePriceList extends Component {
                             {this.state.allPriceList.map((q, i) => <tr key={i}>
                                 <td>{q.price}</td>
                                 <td>{q.haircutType}</td>
-                                <td ><i className="fa fa-trash-alt" onClick={() => this.deleteHaircutType(q._id)}></i></td>
+                                <td ><button><i className="fa fa-trash-alt" onClick={() => this.deleteHaircutType(q._id)}></i></button></td>
                             </tr>)}
                         </tbody>
                     </table>

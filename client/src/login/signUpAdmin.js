@@ -15,7 +15,7 @@ class SignUpAdmin extends Component {
             password : this.state.password
         }).then(res => {
             console.log(res);
-            if (res.status === 201) {
+            if (res.status === 200) {
                 this.setState({flag:true})
             }
             else{

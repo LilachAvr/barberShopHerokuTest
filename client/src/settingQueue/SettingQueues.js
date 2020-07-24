@@ -305,7 +305,7 @@ class SettingQueues extends Component {
                                     <td>{q.time}</td>
                                     <td>{q.date}</td>
                                     <td>{q.barber}</td>
-                                    <td ><i className="fa fa-trash-alt" onClick={() => this.deleteQueue(q._id)}></i></td>
+                                    <td ><button><i className="fa fa-trash-alt" onClick={() => this.deleteQueue(q._id)}></i></button></td>
                                 </tr>)}
 
                             </tbody>
