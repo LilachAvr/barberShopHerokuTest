@@ -94,7 +94,8 @@ class SettingQueues extends Component {
             barber: this.chooseBarber
         }
         console.log(data);
-
+        
+        
         axios.post('/queues/scheduledCustomerQueues', data)
             .then(res => {
 
@@ -203,7 +204,8 @@ class SettingQueues extends Component {
         let x;
         console.log(this.token);
         console.log(this.state.allQueues);
-
+        console.log(this.dateValue);
+        
         return (
             <div>
                 {

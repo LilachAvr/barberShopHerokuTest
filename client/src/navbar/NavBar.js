@@ -134,7 +134,7 @@ class NavBar extends Component {
                     <Link to='/PriceList' className='nav-link'>מחירון</Link>
                     <Link to='/Products' className='nav-link'>המוצרים שלנו</Link>
                     <NavDropdown title="תורים" id="collasible-nav-dropdown">
-                        <NavDropdown.Item to='/SettingQAdmin' className='nav-link-admin'>קביעת תורים</NavDropdown.Item>
+                        <NavDropdown.Item to='/' className='nav-link-admin'><Link to='/SettingQAdmin'>קביעת תורים</Link></NavDropdown.Item>
                         {/* <Link to='/ClientQueues' className='nav-link-admin'>תורים שנקבעו</Link> */}
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/ClientQueues">תורים שנקבעו</NavDropdown.Item>

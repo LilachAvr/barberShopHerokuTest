@@ -20,7 +20,7 @@ class NewUpdates extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <input type='text'/>
-                    <Button variant="primary" >
+                    <Button variant="info" >
                         עדכן
               </Button>
                 </Modal.Body>

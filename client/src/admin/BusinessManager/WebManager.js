@@ -22,19 +22,19 @@ class WebManager extends Component {
         return (
             <div className='container1'>
                 <div className="all">
-                    <div className="left" onClick={() => this.setState({ updateGallery: true })}>
-                        <button>עדכון גלריה</button>
+                    <div  onClick={() => this.setState({ updateGallery: true })}>
+                        <button className="left"> עדכון גלריה</button>
                     </div>
                     <div className="center" onClick={() => this.setState({ setclientqueues: true })}>
-                        <button>קביעת תורים</button>
+                        <button className="center">קביעת תורים</button>
                     </div>
                     <div className="right" onClick={() => this.setState({ updatePriceList: true })}>
-                        <button>עדכון מחירים</button>
+                        <button className="right">עדכון מחירים</button>
                     </div>
 
                     <ButtonToolbar>
                         <div className="righter">
-                            <button  onClick={() => {
+                            <button className="righter" onClick={() => {
                                 this.setState({ newUpdatesShow: true })
                             }}>עדכונים חמים</button>
                             <NewUpdates

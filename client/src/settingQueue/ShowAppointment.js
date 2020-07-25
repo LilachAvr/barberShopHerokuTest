@@ -22,11 +22,11 @@ class ShowAppointment extends Component {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        בחר סוג עובד
+                    <strong>{this.props.username.userName}</strong> היי
         </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <strong>{this.props.username.userName}</strong> היי
+                <strong>{this.props.username.userName}</strong> נקבע לך תור 
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant='danger' onClick={this.props.onHide}>חזור</Button>
