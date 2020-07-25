@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './SettingQueues.css';
 import moment from 'moment';
+import { Redirect } from 'react-router-dom';
 
 class SettingQueues extends Component {
 
     state = {
-        selectStyleChoosen: false, dateChoosen: false, barberChoosen: false, styleChoosen: false,
+        selectStyleChoosen: false, dateChoosen: false, barberChoosen: false, styleChoosen: false, backToHome: false,
         timesAlreadySet: '', timesList: [], flag: false, added: false, dateValue: '', selectValue: new Date(), selectStyle: '', chooseBarber: '', allQueues: [], filterQueues: [], alertError: false, alertSuccess: false, showUpdateTimes: [],
         times: [
             { time: '11:00' },
@@ -93,9 +94,9 @@ class SettingQueues extends Component {
             phone: this.props.username.phone,
             barber: this.chooseBarber
         }
-        console.log(data);
-        
-        
+        // console.log(data);
+
+
         axios.post('/queues/scheduledCustomerQueues', data)
             .then(res => {
 
@@ -152,16 +153,16 @@ class SettingQueues extends Component {
 
 
                 this.setState({ allQueues: res.data })
-                console.log(res.data.time);
+                // console.log(res.data.time);
 
                 for (let i = 0; i < this.state.allQueues.length; i++) {
                     const element = this.state.allQueues[i];
-                    console.log(element.time);
-                    console.log(element.date);
+                    // console.log(element.time);
+                    // console.log(element.date);
                     let temp = [...this.state.timesList]
                     temp.push({ date: element.date, time: element.time, barber: element.barber })
                     this.setState({ timesList: temp })
-                    console.log(this.state.timesList);
+                    // console.log(this.state.timesList);
 
                 }
 
@@ -177,7 +178,7 @@ class SettingQueues extends Component {
     }
 
     getDetilsFromUserToken = () => {
-        console.log(this.token);
+        // console.log(this.token);
 
         axios.get('/Users/me', { headers: { 'x-access-token': this.token } })
 
@@ -185,9 +186,9 @@ class SettingQueues extends Component {
 
                 this.userName = res.data.firstName
                 this.phone = res.data.phone
-                console.log(this.userName, this.phone);
+                // console.log(this.userName, this.phone);
                 this.props.logs(this.userName, this.phone, this.token)
-                console.log(this.userName, this.phone);
+                // console.log(this.userName, this.phone);
 
 
 
@@ -202,10 +203,12 @@ class SettingQueues extends Component {
 
     render() {
         let x;
-        console.log(this.token);
-        console.log(this.state.allQueues);
-        console.log(this.dateValue);
-        
+        // console.log(this.token);
+        // console.log(this.state.allQueues);
+        // console.log(this.time);
+        if (this.state.backToHome) {
+            return <Redirect to='/Home1' />
+        }
         return (
             <div>
                 {
@@ -220,7 +223,27 @@ class SettingQueues extends Component {
 
                 {
                     this.state.alertSuccess ? <div className="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>התור נקבע בהצלחה!</strong>
+                        ,{this.props.username.userName} היי
+                            <br />נקבע לך תור ביום {this.selectValue}
+                        <br />
+                             בשעה {this.dateValue}
+                        <br />
+                        {this.chooseBarber} אצל
+                              <br /><br />
+                              ...שים לב
+                            <br />
+                        במידה ואינך מעוניין בתור אנא לחץ על ביטול
+                        <br />
+                        <button id='btnRemoveQueue'
+                         onClick={()=>{
+                           this.deleteQueue(this.state.filterQueues._id)
+                        }}>ביטול</button>
+                        <button id='btnConfirmQueue' 
+                        onClick={() => {
+                            this.setState({ backToHome: true })
+                        }}>אישור התור</button>
+                        <br /><br />
+                        <img src='/logo.png' alt='logo' id='logoNaftali' />
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
                             this.setState({ alertSuccess: !this.state.alertSuccess })}>
                             <span id='exit' aria-hidden="true">&times;</span>
@@ -275,7 +298,7 @@ class SettingQueues extends Component {
                             : ''}
                     </div>
                 </div >
-                <div className='listQueues'>
+                {/* <div className='listQueues'>
                     <input type='date' onChange={(e) => {
                         x = e.target.value
                     }} />
@@ -314,7 +337,7 @@ class SettingQueues extends Component {
 
                         </table>
                     </div>
-                </div>
+                </div> */}
 
             </div >
         )
@@ -324,51 +347,30 @@ class SettingQueues extends Component {
         const filterWithphone = this.state.allQueues.filter((u, index) => u.phone === this.phone)
         if (this.dateVal === undefined || this.dateVal === "") {
             this.setState({ filterQueues: filterWithphone })
-            console.log(this.state.filterQueues);
+            // console.log(this.state.filterQueues);
         } else {
             let strdate = this.dateVal.toString();
             const filtered = filterWithphone.filter((q, i) => q.date === strdate);
             this.setState({ filterQueues: filtered })
-            console.log(this.state.filterQueues);
+            // console.log(this.state.filterQueues);
 
         }
     }
 
 
     filtTimes = () => {
-        console.log(this.state.timesList);
-        console.log('dfghjkliuytredcvbnkoiuyfdcghbnhjh');
-        
-        
 
         for (let i = 0; i < this.state.times.length; i++) {
             const clientTime = this.state.times[i].time;
             for (let j = 0; j < this.state.timesList.length; j++) {
                 const dbTime = this.state.timesList[j].time;
-                console.log(clientTime, dbTime);
-
                 if (clientTime === dbTime && this.state.timesList[j].date === this.selectValue && this.state.timesList[j].barber === this.chooseBarber) {
-                    // console.log(this.state.times.splice(i, 0));
-                     this.state.times.splice(i, 1)
-
+                    this.state.times.splice(i, 1)
                 } else {
-                    console.log('eroor splice');
+                    // console.log('eroor splice');
                 }
             }
         }
-
-        // for (let i = 0; i < this.state.times.length; i++) {
-        //     // const element = this.state.times[i].time;
-        //     if (this.state.times[i].time === this.state.timesList[i].time) {
-        //         console.log('splice');
-        //         this.state.times[i].time.splice(i,1)
-        //         console.log(this.state.times[i].time);
-
-        //     }else{
-        //         console.log('error');
-
-        //     }
-        // }
 
     }
 

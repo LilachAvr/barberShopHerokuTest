@@ -43,12 +43,12 @@ class NavBar extends Component {
     }
 
     logs = (userName, phone, token) => {
-        console.log(userName, phone, token);
+        // console.log(userName, phone, token);
         let temp = { userName, phone, token }
-        console.log(temp);
+        // console.log(temp);
 
         this.setState({ name: temp })
-        console.log(this.state.name);
+        // console.log(this.state.name);
 
     }
     componentDidMount() {
@@ -96,7 +96,7 @@ class NavBar extends Component {
     )
     userLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#">
+            <Navbar.Brand >
               <Link to='/Home1'>  <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

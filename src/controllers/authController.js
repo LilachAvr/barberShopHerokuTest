@@ -84,7 +84,7 @@ router.get('/users/getUser', verifyToken, async (req, res, next) => {
 router.get("/Users/me", verifyToken, async (req, res, next) => {
     const user = await User.findById(req.userId, { password: 0 })
     token = req.get('x-access-token')
-    console.log(token);
+    // console.log(token);
 
     if (!user) {
         return res.status(404).send('No user found');
@@ -142,7 +142,7 @@ router.get('/userAdmin/getUser', verifyToken, async (req, res, next) => {
 router.get("/userAdmin/me", verifyToken, async (req, res, next) => {
     const user = await Administrator.findById(req.userId, { password: 0 })
     if (!user) {
-        console.log('wnrf', res);
+        // console.log('wnrf', res);
         return res.status(404).send('No user found');
     }
     res.json(user);
@@ -163,18 +163,18 @@ router.post("/upload", upload.single('myImage'), (req, res) => {
 
     obj.save()
     res.status(201).send(obj)
-    console.log('successe upload image');
+    // console.log('successe upload image');
 });
 
 router.get("/uploadImg", (req, res) => {
-    console.log("--------------/uploadImg ----------------------");
+    // console.log("--------------/uploadImg ----------------------");
     // const fileName = path.join(
     //     __dirname,
     //     `${uploadDestination}/${req.params.fil}`
     // );
     // res.sendFile(fileName)
     // 
-    console.log('image success')
+    // console.log('image success')
     // const fileName = path.join(
     //     __dirname,
     //     `${uploadDestination}/${req.params.newFileName}`
@@ -190,7 +190,7 @@ router.get("/uploadImg", (req, res) => {
             //     __dirname,
             //     `${uploadDestination}/${req.params.fileImg}`
             // );
-            console.log(date, 'images from db');
+            // console.log(date, 'images from db');
             // res.sendFile(fileName, 'HHGHH')
             res.status(200).send(date);
 
@@ -205,7 +205,7 @@ router.get("/uploadImg", (req, res) => {
 ////////////////////////// setting queues ///////////////////////////////
 
 router.post("/queues/scheduledCustomerQueues", (req, res) => {
-    console.log("--------------/queues/scheduled Queues is accessed");
+    // console.log("--------------/queues/scheduled Queues is accessed");
     const user = req.body;
     const userObj = new SettingQueues({
         userName: user.userName,
@@ -229,8 +229,8 @@ router.post("/queues/scheduledCustomerQueues", (req, res) => {
             if (err) throw err;
             if (obj === null) {
 
-                console.log('insert new document');
-                console.log(obj);
+                // console.log('insert new document');
+                // console.log(obj);
 
 
                 userObj.save();
@@ -240,9 +240,9 @@ router.post("/queues/scheduledCustomerQueues", (req, res) => {
 
             } else {
                 // findTimeInDate(userObj, res);
-                console.log(obj.userName);
+                // console.log(obj.userName);
 
-                console.log('error already exist');
+                // console.log('error already exist');
 
 
                 res.status(409).send(userObj);
@@ -252,10 +252,10 @@ router.post("/queues/scheduledCustomerQueues", (req, res) => {
 })
 
 router.get("/queues/scheduledCustomerQueues", (req, res) => {
-    console.log("--------------/queues/scheduled Queues is accessed");
+    // console.log("--------------/queues/scheduled Queues is accessed");
     return SettingQueues.find({})
         .then((data) => {
-            console.log(data, 'data from db');
+            // console.log(data, 'data from db');
             res.status(200).send(data);
 
         })
@@ -266,8 +266,8 @@ router.get("/queues/scheduledCustomerQueues", (req, res) => {
 })
 
 router.delete("/queues/scheduledCustomerQueues/:id", (req, res) => {
-    console.log("-----delete---------/queues/scheduled Queues is accessed");
-    console.log(req.params);
+    // console.log("-----delete---------/queues/scheduled Queues is accessed");
+    // console.log(req.params);
     // console.log(req.params.phone);
     SettingQueues.remove({ _id: req.params.id })
 
@@ -277,7 +277,7 @@ router.delete("/queues/scheduledCustomerQueues/:id", (req, res) => {
             // console.log(req.params.id, 'data from db');
             res.status(200).send(data);
             // console.log(data, 'deleted!!!');
-            console.log(SettingQueues, 'ahdjhfskladJHSDAJFKSAJDHDafksjhafksjhfasgjkhfaksjhfa--------------------------------------------------------------');
+            // console.log(SettingQueues, 'ahdjhfskladJHSDAJFKSAJDHDafksjhafksjhfasgjkhfaksjhfa--------------------------------------------------------------');
         })
         .catch((err) => {
             console.log(err);
@@ -296,14 +296,14 @@ router.post("/priceUpdated", (req, res) => {
 
     obj.save()
     res.status(201).send(obj)
-    console.log('successe update prices list');
+    // console.log('successe update prices list');
 });
 
 router.get("/priceUpdated", (req, res) => {
-    console.log("--------------/queues/scheduled Queues is accessed");
+    // console.log("--------------/queues/scheduled Queues is accessed");
     return PriceList.find({})
         .then((data) => {
-            console.log(data, 'data from db');
+            // console.log(data, 'data from db');
             res.status(200).send(data);
 
         })
@@ -314,8 +314,8 @@ router.get("/priceUpdated", (req, res) => {
 })
 
 router.delete("/priceUpdated/:id", (req, res) => {
-    console.log("-----delete---------/haircutType is accessed");
-    console.log(req.params);
+    // console.log("-----delete---------/haircutType is accessed");
+    // console.log(req.params);
     // console.log(req.params.phone);
     PriceList.remove({ _id: req.params.id })
 
@@ -325,7 +325,7 @@ router.delete("/priceUpdated/:id", (req, res) => {
             // console.log(req.params.id, 'data from db');
             res.status(200).send(data);
             // console.log(data, 'deleted!!!');
-            console.log(PriceList, 'delete--------------------------------------------------------------');
+            // console.log(PriceList, 'delete--------------------------------------------------------------');
         })
         .catch((err) => {
             console.log(err);

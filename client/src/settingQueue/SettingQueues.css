@@ -15,16 +15,16 @@
 #exit {
     /* margin-bottom: 5%; */
     font-family: cursive;
-    text-shadow: 3px 2px rgb(189, 152, 50);
+    text-shadow: 3px 2px rgb(50, 104, 189);
     text-transform: capitalize;
     font-size: 2.5rem;
     direction: ltr;
     text-align: end;
 }
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    color: aliceblue !important;
+    background-color: #343a40 !important;
+    border-color: aliceblue !important;
     text-align: center;
     font-size: 20px;
 }
@@ -159,4 +159,32 @@ border-radius: 17px;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+}
+
+div.alert.alert-success.alert-dismissible.fade.show {
+    width: 80%;
+    height: 78vh;
+    z-index: 101;
+    position: absolute;
+    margin: 5% 8%;
+    box-shadow: black 66px 86px 225px 128.5px;
+    padding: 13% 2%;
+}
+
+#btnRemoveQueue{
+    width: 27%;
+    height: 6vh;
+    font-size: medium;
+    border: red solid;
+    background: red;
+    margin: 7px 0 0 92px;
+}
+
+#btnConfirmQueue{
+    width: 46%;
+    height: 6vh;
+    font-size: medium;
+    border: green solid;
+    background: green;
+    margin: 7px 0 0 67px;
 }
