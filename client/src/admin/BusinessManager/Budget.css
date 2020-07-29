@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#topPart{
+    height: 40%;
+    position: relative;
+    background-image: url("mount.png");
+    background-position:center;
+    background-size:cover ;
+}
+#upperHeader{
+    position: absolute;
+    width:30%;
+    top: 9%;
+    left: 35%;
+    color: white;
+    
+}
+#data{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px ;
+}
+#balance{
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 25px ;
+}
+#income{
+    background-color: rgb(51, 169, 164);
+    width: 350px;
+    height: 40px;
+    margin: 20px auto 4px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#expenses{
+    background-color: rgb(250, 71, 71);
+    width: 350px;
+    height: 40px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#input_data{
+    background-color: rgb(247, 247, 247);
+    padding: 1.5%;
+    text-align: center;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+#selector{    
+    border: 1px solid rgb(231, 231, 231);
+    width: 55px;
+    height: 44px;
+    border-radius: 5px;
+}
+#discreption{
+    border: 1px solid rgb(231, 231, 231);
+    width: 30%;
+    height: 44px;
+    border-radius: 5px;
+    padding: 10px;
+}
+#value{
+    border: 1px solid rgb(231, 231, 231);
+    width: 100px;
+    height: 44px;
+    border-radius: 5px;
+    padding: 10px;
+}
+#button{
+    border: none;
+    background: none;
+    color: rgb(40, 185, 181);
+    display: inline-block;
+    font-size: 35px;
+    vertical-align: middle;
+    transition: border 0.3s;
+    outline: none;
+}
+#bottomPart{
+    /* width: 80%; */
+    /* height: 38%; */
+    /* margin: 30px auto; */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+#incTital{
+    /* float: left; */
+    width: 40%;
+}
+
+#expTital{
+    /* float: left; */
+    width: 40%;
+    /* display: contents; */
+}
+
+#expListHeader{
+    float: left;
+    width: 50%;
+    color: rgba(250, 71, 71);
+}
+h2{
+    font-weight: 100;
+
+}
+#incListHeader{
+    color: rgb(40, 185, 181);
+
+}
+#incMoney{
+    float: right;
+}
+#incomeText{
+    position: relative;
+    left: 5%;
+    
+}
+#moneyInValue{
+    float: left;
+}
+#expMoney{
+    float: right;
+}
+#moneyExValue{
+    float: left;
+}
+#expensesText{
+    position: relative;
+    left: 5%;
+}
+#inPercent{
+    float: left;
+    left: 16px;
+    width: 34px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 13px;
+    /* color: blue; */
+}
+#exPercent{
+    float: left;
+    width: 50px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 10px;
+}
+input:focus{
+    outline: none;
+}
+  /* table, tr{
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid grey;
+
+}  */
+/* th{
+    text-align: left;
+    padding-bottom: 10px;
+}
+td{
+    padding: 15px;
+    text-align: left;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}  */
+/* table,th,td{
+    border-bottom-color: inherit;
+    padding: 0 170px 0 0;
+} */
+/* tr{
+    outline: thin solid;
+    border-collapse: collapse;
+
+}
+td{
+    padding: 15px;
+    /* text-align: left; */
+    /* border-top: 1px solid grey;
+    border-bottom: 1px solid grey; */
+/* }  */
+
+.fa-times-circle{
+    opacity: 0;
+    transition: 1s;
+    
+}
+
+li:hover .fa-times-circle{
+    opacity: 1;
+    
+}
+
+li{
+    text-decoration: none;
+    display: flex;
+}
+.li_space{
+    display: flex;
+    justify-content: space-between;
+}

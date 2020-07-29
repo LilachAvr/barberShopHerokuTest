@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect ,Link} from 'react-router-dom';
 import './WebManager.css';
 import NewUpdates from './NewUpdates';
-import { ButtonToolbar } from 'react-bootstrap';
+import { ButtonToolbar, Nav, NavDropdown } from 'react-bootstrap';
 
 
 class WebManager extends Component {
@@ -21,18 +21,21 @@ class WebManager extends Component {
         }
         return (
             <div className='container1'>
-                <div className="all">
-                    <div  onClick={() => this.setState({ updateGallery: true })}>
-                        <button className="left"> עדכון גלריה</button>
-                    </div>
-                    <div className="center" onClick={() => this.setState({ setclientqueues: true })}>
-                        <button className="center">קביעת תורים</button>
-                    </div>
-                    <div className="right" onClick={() => this.setState({ updatePriceList: true })}>
-                        <button className="right">עדכון מחירים</button>
-                    </div>
-
-                    <ButtonToolbar>
+ 
+                    <Nav>
+                        <NavDropdown title="דוחות" id="collasible-nav-dropdown">
+                           <Nav.Link ><Link to='/ClientQueues'>רשימת תורים</Link></Nav.Link>
+                           <Nav.Link > <Link to='/SettingQAdmin'>סיכום כמויות</Link></Nav.Link>
+                           <Nav.Link > <Link to='/UpdatePriceList'>סיכום הרשמות</Link></Nav.Link>
+                           <Nav.Link > <Link to='/UpdatePriceList'>סיכום תורים</Link></Nav.Link>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown title="עדכונים" id="collasible-nav-dropdown">
+                        <Nav.Link > <Link to='/UploadImages'>עדכון גלריה</Link></Nav.Link>
+                           <Nav.Link > <Link to='/SettingQAdmin'>קביעת תורים</Link></Nav.Link>
+                           <Nav.Link > <Link to='/UpdatePriceList'>עדכון מחירים</Link></Nav.Link>
+                           <ButtonToolbar>
                         <div className="righter">
                             <button className="righter" onClick={() => {
                                 this.setState({ newUpdatesShow: true })
@@ -43,8 +46,22 @@ class WebManager extends Component {
                             />
                         </div>
                     </ButtonToolbar>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown title="יומן" id="collasible-nav-dropdown">
+                        <Nav.Link > <Link to='/UploadImages'>קביעת תורים</Link></Nav.Link>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown title="הכנסות / הוצאות" id="collasible-nav-dropdown">
+                        <Nav.Link > <Link to='/UploadImages'>חישוב הכנסות והוצאות</Link></Nav.Link>
+                           <Nav.Link > <Link to='/SettingQAdmin'>היסטוריה</Link></Nav.Link>
+                        </NavDropdown>
+                    </Nav>
 
-                </div>
+
+     
 
 
             </div>

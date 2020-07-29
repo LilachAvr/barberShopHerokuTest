@@ -10,7 +10,6 @@ import axios from 'axios';
 
 
 
-
 class Gallery extends Component {
     state = { allImages: [], filterImages: [] }
 

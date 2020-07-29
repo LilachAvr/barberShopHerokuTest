@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Admin.css';
 
 
 class SettingQAdmin extends Component {
@@ -51,7 +52,12 @@ class SettingQAdmin extends Component {
             { time: '20:40' },
             { time: '21:00' }],
         timesList: [],
-        barberChoosen: false
+        barberChoosen: false,
+        countstyle1 : 1,
+        countstyle2 : 1,
+        countstyle3 : 1,
+        countstyle4 : 1,
+        countstyle5 : 1,
     }
 
     id = '';
@@ -61,7 +67,11 @@ class SettingQAdmin extends Component {
     dateVal = ''
     user = ''
     chooseBarber = ''
-
+    countstyle1 = 0
+    countstyle2 = 0
+    countstyle3 = 0
+    countstyle4 = 0
+    countstyle5 = 0
 
 
     scheduledCustomerQueues = () => {
@@ -121,14 +131,39 @@ class SettingQAdmin extends Component {
 
                 for (let i = 0; i < this.state.allQueues.length; i++) {
                     const element = this.state.allQueues[i];
-                    console.log(element.time);
-                    console.log(element.date);
+                    // console.log(element.time);
+                    // console.log(element.date);
                     let temp = [...this.state.timesList]
                     temp.push({ date: element.date, time: element.time, barber: element.barber })
                     this.setState({ timesList: temp })
-                    console.log(this.state.timesList);
+                    console.log(this.state.allQueues[i].style);
+
 
                 }
+
+                for (let i = 0; i < this.state.allQueues.length; i++) {
+                    const element = this.state.allQueues[i];
+                    if (element.style === 'תספורת רגילה') {
+                        this.countstyle1++;
+                        this.setState({countstyle1:this.countstyle1})
+                    } 
+                     if (element.style === 'תספורת+צבע') {
+                        this.countstyle2++
+                        this.setState({countstyle2:this.countstyle2})
+                    }  if (element.style === 'תספורת+החלקה+צבע') {
+                        this.countstyle3++
+                        this.setState({countstyle3:this.countstyle3})
+                    }  if (element.style === 'תספורת+החלקה') {
+                        this.countstyle4++
+                        this.setState({countstyle4:this.countstyle4})
+                    }  if (element.style === 'תספורת+ציורים') {
+                        this.countstyle5++
+                        this.setState({countstyle5:this.countstyle5})
+                    }
+
+
+                }
+                // console.log(this.state.countstyle1, this.state.countstyle2, this.state.countstyle3, this.state.countstyle4, this.state.countstyle5);
 
             })
             .catch((err) => {
@@ -140,83 +175,92 @@ class SettingQAdmin extends Component {
 
 
     render() {
+        // console.log(this.state.countstyle1, this.state.countstyle2, this.state.countstyle3, this.state.countstyle4, this.state.countstyle5);
+        
         return (
             <div>
-
-                {this.state.alertError ? <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>התור קיים!</strong>  אנא בחר תור חדש.
+                <div>
+                    {this.state.alertError ? <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>התור קיים!</strong>  אנא בחר תור חדש.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close" onClick={() =>
-                        this.setState({ alertError: !this.state.alertError })}>
-                        <span id='exit' aria-hidden="true">&times;</span>
-                    </button>
-                </div> : null}
+                            this.setState({ alertError: !this.state.alertError })}>
+                            <span id='exit' aria-hidden="true">&times;</span>
+                        </button>
+                    </div> : null}
 
-                {this.state.alertSuccess ? <div className="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong>התור נקבע בהצלחה!</strong>
-                    <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
-                        this.setState({ alertSuccess: !this.state.alertSuccess })}>
-                        <span id='exit' aria-hidden="true">&times;</span>
-                    </button>
-                </div> : null}
-
-
-                <div className='settingQ'>
-
-                    <div>
-                        <input type="text" name="" placeholder='שם לקוח'
-                            onChange={(e) => { this.user = e.target.value }} />
-
-                        <select onChange={(e) => { this.chooseBarber = e.target.value; this.setState({ barberChoosen: true }) }}>
-                            <option > בחר ספר</option>
-                            <option >worker</option>
-                            <option >admin</option>
-                        </select>
-                        {this.state.barberChoosen ?
-                            <input type="date" name="date" onChange={(e) => {
-                                this.selectValue = e.target.value;
-                                this.setState({ dateChoosen: true })
-                                this.filtTimes();
-                            }} /> : ''}
+                    {this.state.alertSuccess ? <div className="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>התור נקבע בהצלחה!</strong>
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
+                            this.setState({ alertSuccess: !this.state.alertSuccess })}>
+                            <span id='exit' aria-hidden="true">&times;</span>
+                        </button>
+                    </div> : null}
 
 
+                    <div className='settingQ'>
 
+                        <div>
+                            <input type="text" name="" placeholder='שם לקוח'
+                                onChange={(e) => { this.user = e.target.value }} />
 
-                        {this.state.dateChoosen ?
-                            <select onChange={(e) => {
-
-                                this.dateValue = e.target.value; this.setState({ timeChoosen: true })
-
-                            }}>
-
-                                {this.state.times.map((time, i) =>
-
-                                    <option key={i} > {time.time} </option>
-
-                                )}
+                            <select onChange={(e) => { this.chooseBarber = e.target.value; this.setState({ barberChoosen: true }) }}>
+                                <option > בחר ספר</option>
+                                <option >worker</option>
+                                <option >admin</option>
                             </select>
-                            : ""}
-
-                        {this.state.timeChoosen ?
-                            <select onChange={(e) => { this.selectStyle = e.target.value; this.setState({ styleChoosen: true }) }}>
-                                <option ></option>
-                                <option>תספורת רגילה</option>
-                                <option>תספורת+צבע</option>
-                                <option>תספורת+החלקה+צבע</option>
-                                <option>תספורת+החלקה</option>
-                                <option>תספורת+ציורים</option>
+                            {this.state.barberChoosen ?
+                                <input type="date" name="date" onChange={(e) => {
+                                    this.selectValue = e.target.value;
+                                    this.setState({ dateChoosen: true })
+                                    this.filtTimes();
+                                }} /> : ''}
 
 
-                            </select>
-                            : ""}
-                    </div>
 
-                    <div>
-                        <button type='button' onClick={
-                            this.scheduledCustomerQueues}>קבע תור</button>
 
+                            {this.state.dateChoosen ?
+                                <select onChange={(e) => {
+
+                                    this.dateValue = e.target.value; this.setState({ timeChoosen: true })
+
+                                }}>
+
+                                    {this.state.times.map((time, i) =>
+
+                                        <option key={i} > {time.time} </option>
+
+                                    )}
+                                </select>
+                                : ""}
+
+                            {this.state.timeChoosen ?
+                                <select onChange={(e) => { this.selectStyle = e.target.value; this.setState({ styleChoosen: true }) }}>
+                                    <option ></option>
+                                    <option>תספורת רגילה</option>
+                                    <option>תספורת+צבע</option>
+                                    <option>תספורת+החלקה+צבע</option>
+                                    <option>תספורת+החלקה</option>
+                                    <option>תספורת+ציורים</option>
+
+
+                                </select>
+                                : ""}
+                        </div>
+
+                        <div>
+                            <button type='button' onClick={
+                                this.scheduledCustomerQueues}>קבע תור</button>
+
+                        </div>
                     </div>
                 </div>
-
+                <div className='countStyles'>
+                    <p className='countStyle'>{this.state.countstyle1}<br/>תספורת רגילה</p>
+                    <p className='countStyle'>{this.state.countstyle2}<br/>תספורת+צבע</p>
+                    <p className='countStyle'>{this.state.countstyle3}<br/>+תספורת <br/>החלקה+צבע</p>
+                    <p className='countStyle'>{this.state.countstyle4}<br/>תספורת+החלקה</p>
+                    <p className='countStyle'>{this.state.countstyle5} <br/>תספורת+ציורים</p>
+                </div>
 
             </div>
         )

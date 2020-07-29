@@ -26,6 +26,7 @@ import ReactUploadImage from '../admin/BusinessManager/UploadImages';
 import Employee from '../admin/Employee/Employee';
 import WebEmployee from '../admin/Employee/WebEmployee';
 import S from '../settingQueue/s';
+import TotalSubscribers from '../admin/BusinessManager/TotalSubscribers'
 import Footer from '../footer/footer'
 import NotFound from '../notFound/NotFound';
 
@@ -124,7 +125,7 @@ class NavBar extends Component {
     adminLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#">
-               <Link to='/WebManager'> <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
+               <Link to='/WebManager'><img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -205,6 +206,8 @@ class NavBar extends Component {
                     <Route exact path='/UploadImages' component={ReactUploadImage} />
                     <Route exact path='/Employee' render={() => <Employee userName={this.username} logs={this.logs} log={this.props.log} />} />
                     <Route exact path='/S' component={S} />
+                    <Route exact path='/TotalSubscribers' component={TotalSubscribers} />
+ 
                     <Route exact path='/Footer' component={Footer} />
                     <Route component={NotFound} />
                 </Switch>

@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 class SettingQueues extends Component {
 
     state = {
-        selectStyleChoosen: false, dateChoosen: false, barberChoosen: false, styleChoosen: false, backToHome: false,
+        selectStyleChoosen: false, dateChoosen: false, barberChoosen: false, styleChoosen: false, backToHome: false, currentQueueID: '',isRemoved:false,
         timesAlreadySet: '', timesList: [], flag: false, added: false, dateValue: '', selectValue: new Date(), selectStyle: '', chooseBarber: '', allQueues: [], filterQueues: [], alertError: false, alertSuccess: false, showUpdateTimes: [],
         times: [
             { time: '11:00' },
@@ -94,7 +94,7 @@ class SettingQueues extends Component {
             phone: this.props.username.phone,
             barber: this.chooseBarber
         }
-        // console.log(data);
+        console.log(data);
 
 
         axios.post('/queues/scheduledCustomerQueues', data)
@@ -108,7 +108,8 @@ class SettingQueues extends Component {
                     this.setState({ allQueues: tmp })
                     this.setState({ alertSuccess: true })
                     this.setState({ isDisable: true })
-
+                    console.log(res.data._id);
+                    this.setState({currentQueueID:res.data._id})
 
                 }
                 else {
@@ -128,12 +129,11 @@ class SettingQueues extends Component {
 
     deleteQueue = (id) => {
         axios.delete(`/queues/scheduledCustomerQueues/${id}`)
-
-
             .then(res => {
                 if (res.status === 200) {
 
-                    alert('התור נמחק בהצלחה')
+                    // alert('התור נמחק בהצלחה')
+                    this.setState({ isRemoved: true });
                 }
                 else {
                     console.log(`error code ${res.status}`)
@@ -202,10 +202,12 @@ class SettingQueues extends Component {
     }
 
     render() {
-        let x;
+        // let x;
         // console.log(this.token);
         // console.log(this.state.allQueues);
         // console.log(this.time);
+        // console.log(this.state.currentQueueID);
+        
         if (this.state.backToHome) {
             return <Redirect to='/Home1' />
         }
@@ -234,15 +236,21 @@ class SettingQueues extends Component {
                             <br />
                         במידה ואינך מעוניין בתור אנא לחץ על ביטול
                         <br />
+                        
                         <button id='btnRemoveQueue'
                          onClick={()=>{
-                           this.deleteQueue(this.state.filterQueues._id)
+                           this.deleteQueue(this.state.currentQueueID)
+                           console.log(this.state.currentQueueID);
+                           
                         }}>ביטול</button>
-                        <button id='btnConfirmQueue' 
+                  
+                        <br/>
+                        {this.state.isRemoved ? <p style={{ color: 'red' }}>התור נמחק בהצלחה</p> :      
+                         <button id='btnConfirmQueue' 
                         onClick={() => {
                             this.setState({ backToHome: true })
-                        }}>אישור התור</button>
-                        <br /><br />
+                        }}>אישור התור</button>}
+                        <br />
                         <img src='/logo.png' alt='logo' id='logoNaftali' />
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() =>
                             this.setState({ alertSuccess: !this.state.alertSuccess })}>
@@ -294,7 +302,8 @@ class SettingQueues extends Component {
                         <br /><br />
 
                         {this.state.selectStyleChoosen ?
-                            <button type='button' onClick={this.scheduledCustomerQueues}>קבע תור</button>
+                            <button type='button' onClick={this.scheduledCustomerQueues 
+                            }>קבע תור</button>
                             : ''}
                     </div>
                 </div >
@@ -345,16 +354,16 @@ class SettingQueues extends Component {
     filt = () => {
         this.getQueues();
         const filterWithphone = this.state.allQueues.filter((u, index) => u.phone === this.phone)
-        if (this.dateVal === undefined || this.dateVal === "") {
+        // if (this.dateVal === undefined || this.dateVal === "") {
             this.setState({ filterQueues: filterWithphone })
             // console.log(this.state.filterQueues);
-        } else {
-            let strdate = this.dateVal.toString();
-            const filtered = filterWithphone.filter((q, i) => q.date === strdate);
-            this.setState({ filterQueues: filtered })
-            // console.log(this.state.filterQueues);
+        // } else {
+        //     let strdate = this.dateVal.toString();
+        //     const filtered = filterWithphone.filter((q, i) => q.date === strdate);
+        //     this.setState({ filterQueues: filtered })
+        //     // console.log(this.state.filterQueues);
 
-        }
+        // }
     }
 
 

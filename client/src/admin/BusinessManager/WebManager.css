@@ -171,3 +171,19 @@ body {
     direction: ltr;
     text-align: end;
 }
+
+button{
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 0.1em solid #201e1e;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.12em;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 300;
+        color: #393333;
+        text-align: center;
+        transition: all 0.2s;
+        background-color: rgba(255, 166, 0, 0);
+}

@@ -26,10 +26,10 @@ class SelectManagerType extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <Button variant="secondary" onClick={()=>{ this.setState({isBusinessManager:true})
-                    }}>מנהל עסק
+                    }}>נפתלי
               </Button>
                     <Button variant="primary" onClick={()=>{ this.setState({isEmployee:true})}}>
-                        עובד
+                        יהודה
               </Button>
                 </Modal.Body>
                 <Modal.Footer>

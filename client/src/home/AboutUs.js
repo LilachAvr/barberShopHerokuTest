@@ -25,10 +25,6 @@ class AboutUs extends Component {
 
 
                     </h5>
-
-                    <input type='text' />
-                    <input type=''/>
-                    <input type=''/>
                 </div>
             </div>
         )

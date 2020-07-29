@@ -72,12 +72,26 @@ router.post("/users/login", async (req, res, next) => {
 
     res.json({ auth: true, token });
 });
+// router.get('/users/getAllUser', (req,res)=>{
+//     const users = User.find()
+//     if (!users) {
+//         return res.status(404).send('No user found');
+//     }
+//     res.json(users);
+// })
+router.route("/users/getAllUser").get(function(req, res) {
+    User.find({}, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(result);
+      }
+    });
+  })
 
 router.get('/users/getUser', verifyToken, async (req, res, next) => {
     const user = await User.findById(req.userId, { password: 0 })
-    if (!user) {
-        return res.status(404).send('No user found');
-    }
+
     res.json(user);
 });
 
@@ -266,9 +280,9 @@ router.get("/queues/scheduledCustomerQueues", (req, res) => {
 })
 
 router.delete("/queues/scheduledCustomerQueues/:id", (req, res) => {
-    // console.log("-----delete---------/queues/scheduled Queues is accessed");
-    // console.log(req.params);
-    // console.log(req.params.phone);
+    console.log("-----delete---------/queues/scheduled Queues is accessed");
+    console.log(req.params);
+    console.log(req.params.phone);
     SettingQueues.remove({ _id: req.params.id })
 
 

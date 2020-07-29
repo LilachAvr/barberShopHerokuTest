@@ -1,4 +1,5 @@
 import React from 'react'
+import './WebManager.css'
 const axios = require("axios");
 
 class ReactUploadImage extends React.Component {
