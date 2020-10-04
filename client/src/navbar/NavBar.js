@@ -66,8 +66,8 @@ class NavBar extends Component {
 
     loginRegLink = (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#">
-            <Link to='/'>  <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
+            <Navbar.Brand>
+            <Link to="/">  <img src='/logo.png' alt='logo' id='logoNaftali' /></Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
