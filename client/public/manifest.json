@@ -5,13 +5,13 @@
     "background_color": "#000000",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": ". ",
     "icons": [
            {
             "src": "favicon.ico",
             "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/x-icon"
-            
+            "type": "image/x-icon",
+            "purpose": "any maskable"
         },
         {
             "src": "images/icons/icon-192x192.png",
